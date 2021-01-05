@@ -1,0 +1,12 @@
+h1, body, #welcome {
+  color: #33ff00;
+  font-family: monospace;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 26.4px;
+
+}
+
+body {
+  background-color: black;
+}
