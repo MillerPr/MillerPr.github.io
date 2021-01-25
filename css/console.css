@@ -1,12 +1,12 @@
-h1, body, #welcome {
-  color: #33ff00;
-  font-family: monospace;
+h1, body {
+  color:rgba(9, 255, 0, 0.5);
+  /* In base ten, 5bf734 is 6,027,060*/
+  font-family: 'VT323', monospace;
   font-style: normal;
   font-variant: normal;
-  line-height: 26.4px;
-
+  line-height: 32px;
 }
 
 body {
-  background-color: black;
+  background-color: hsl(125, 18%, 26%);
 }
