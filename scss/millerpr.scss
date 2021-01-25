@@ -1,0 +1,30 @@
+$base-color: #800000;
+$primary-dark: #767676;
+$primary-light: #d6d6ce;
+$secondary-yellow: #ffb547;
+$secondary-orange: #d49464;
+$secondary-red: #b1746f;
+$secondary-lightgreen: #adb17d;
+$secondary-darkgreen: #8a8b79;
+$secondary-blue: #5b8fa8;
+$secondary-violet: #725663;
+$warning-cyan: #47b5ff;
+$warning-magenta: #ff3399;
+
+%title {
+  color: $base-color;
+}
+
+h1 {
+  @extend %title;
+  letter-spacing: 3px;
+}
+
+nav {
+  background-color:$base-color;
+}
+
+.cardBtn {
+  background-color:$secondary-blue;
+  color: white;
+}

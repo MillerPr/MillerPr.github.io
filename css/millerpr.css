@@ -1,9 +1,18 @@
 h1 {
-  color:maroon;
+  color: #800000;
 }
 
-
+h1 {
+  letter-spacing: 3px;
+}
 
 nav {
   background-color: #800000;
 }
+
+.cardBtn {
+  background-color: #5b8fa8;
+  color: white;
+}
+
+/*# sourceMappingURL=millerpr.css.map */
