@@ -1,5 +1,13 @@
-var x = 1;
-const z = x;
+function evalNumber(){
+  var inputValue = prompt("Enter any five-digit number without commas")
+  if (isNaN(inputValue)||inputValue>99999||inputValue<10000||!Number.isInteger(inputValue)) {
+    alert(inputValue + " is not a valid 5-digit number.")
+  } else if (inputValue%2==0){
+    alert(inputValue + " is an even number.")
+  } else {
+    alert(inputValue + " is an odd number.")
+  }
+}
 
 function conditional(){
   alert("Use Inspect to see the console and inspect the code.");
