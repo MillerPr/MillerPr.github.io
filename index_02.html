@@ -25,6 +25,9 @@
         <li class="nav-item">
           <a class="nav-link" href="https://digitalstudies.uchicago.edu/">Digital Studies</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="map.html">Map API</a>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Research
@@ -47,7 +50,7 @@
           <div class="card w-75 h-100">
             <!-- <img src="..." class="card-img-top" alt="..."> -->
             <div class="card-body">
-              <h5 class="card-title">Digital Studies</h5>
+              <h5 id="programCard" class="card-title">Digital Studies</h5>
               <p class="card-text">The University of Chicago’s program in Digital Studies of Language, Culture, and History provides a one-year Master of
                 Arts curriculum intended for full-time students who have a bachelor’s degree in the humanities or in a related
                 discipline such as history, anthropology, or linguistics.
@@ -80,16 +83,16 @@
         </div><!--column-->
       </div><!--row-->
     </div><!--internal container-->
-<div class="container mt-5">
-  <div class="h3">Sample JS</div>
-  <button type="button" class="btn btn-primary" onclick="conditional()">Conditional</button>
-  <button type="button" class="btn btn-primary" onclick="scopeValues()">Variables</button>
-  <button type="button" class="btn btn-primary" onclick="howdy()">Greetings!</button>
-  <button type="button" class="btn btn-primary" onclick="evalNumber()">Evaluate Number</button>
-</div>
+    <div class="container mt-5">
+      <div id="buttonGroup" class="h3">Sample JS</div>
+      <button type="button" class="btn btn-primary" onclick="conditional()">Conditional</button>
+      <button type="button" class="btn btn-primary" onclick="scopeValues()">Variables</button>
+      <button type="button" class="btn btn-primary" onclick="howdy()">Greetings!</button>
+      <button type="button" class="btn btn-primary" onclick="evalNumber()">Evaluate Number</button>
+      <button type="button" class="btn btn-warning" onclick="changeTitle()">Change Title</button>
+      <button type="button" class="btn btn-warning" onclick="loadXML()">Plos</button>
 
-
-
+    </div>
   </div><!--container-->
 
   <!-- Optional JavaScript; choose one of the two! -->
