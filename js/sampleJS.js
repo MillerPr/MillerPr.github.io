@@ -108,3 +108,13 @@ function mapLoad(){
   }
   map.on('click', onMapClick);
 }
+
+function parentFunction() {
+  let a = 1;
+  function childFunction() {
+    var b = a + 2;
+    return b;
+  };
+  return childFunction();
+}
+
