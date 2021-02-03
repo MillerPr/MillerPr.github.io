@@ -8,13 +8,13 @@
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="navbar-nav mr-auto">
     <li class="nav-item">
-      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link" href="index.html">Home</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="https://digitalstudies.uchicago.edu/">Digital Studies</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/map.html">Map API</a>
+      <a class="nav-link" href="map.html">Map API</a>
     </li>
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
@@ -31,4 +31,9 @@
   </li>
 </ul>
 </div>
+<script>
+  var pathname = window.location.pathname;
+  var cleanPath = pathname.substring(pathname.lastIndexOf('/') + 1);
+  $('[href*="' + cleanPath + '"]').addClass('active');
+</script>
 </nav>
