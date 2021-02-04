@@ -2,10 +2,12 @@ h1 {
   color: #800000;
 }
 
-body {
+/* body {
   padding-bottom: 100px;
-}
-
+  background-image: url(../../DIGS/DataPublication/images/IMG_2130.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+} */
 h1 {
   letter-spacing: 3px;
 }

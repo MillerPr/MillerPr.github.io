@@ -15,9 +15,12 @@ $warning-magenta: #ff3399;
   color: $base-color;
 }
 
-body {
+/* body {
   padding-bottom: 100px;
-}
+  background-image: url(../../DIGS/DataPublication/images/IMG_2130.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+} */
 
 h1 {
   @extend %title;
@@ -42,5 +45,7 @@ footer {
   position: fixed;
   bottom: 0;
 }
+
+
 
 
