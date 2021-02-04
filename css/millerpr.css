@@ -2,6 +2,10 @@ h1 {
   color: #800000;
 }
 
+body {
+  padding-bottom: 100px;
+}
+
 h1 {
   letter-spacing: 3px;
 }
