@@ -118,3 +118,37 @@ function parentFunction() {
   return childFunction();
 }
 
+function searchMusic(){
+  var artistName = document.getElementById('artistInput').value;
+  var albumName = document.getElementById('albumInput').value;
+  var url = "https://www.theaudiodb.com/api/v1/json/1/searchalbum.php?s=" + artistName + "&a=" + albumName;
+  //var url = "https://www.theaudiodb.com/api/v1/json/1/searchalbum.php?s=wilco&a=schmilco";
+  var albumDiv = document.getElementById('albumArt');
+
+  fetch(url)
+  .then(
+    function(response) {
+      if (response.status !== 200) {
+        console.log('Looks like there was a problem. Status Code: ' +
+          response.status);
+        return;
+      }
+
+      // Examine the text in the response
+      response.json().then(function(data) {
+        //console.log(data);
+        let jsonContent = data.album[0];
+        console.log(jsonContent);
+        albumDiv.src = jsonContent.strAlbumThumb;
+        document.getElementById('albumYear').innerText = jsonContent.intYearReleased;
+        document.getElementById('albumGenre').innerText = jsonContent.strGenre;
+        document.getElementById('albumDesc').innerText = jsonContent.strDescriptionEN;
+
+      });
+    }
+  )
+  .catch(function(err) {
+    console.log('Fetch Error :-S', err);
+  });
+}
+
