@@ -53,14 +53,6 @@ function changeTitle(){
 
 }
 
-/* function changeTitlex() {
-  let inputValue = prompt("What would you like to call the section?");
-  let selectedElement = document.getElementById("buttonGroup");
-  console.log(selectedElement)
-  selectedElement.innerHTML = inputValue;
-} */
-
-
 function functionSample(number){
   if (number===0) {
     console.log("Number is even.")
@@ -121,6 +113,7 @@ function parentFunction() {
 function searchMusic(){
   var artistName = document.getElementById('artistInput').value;
   var albumName = document.getElementById('albumInput').value;
+
   var url = "https://www.theaudiodb.com/api/v1/json/1/searchalbum.php?s=" + artistName + "&a=" + albumName;
   //var url = "https://www.theaudiodb.com/api/v1/json/1/searchalbum.php?s=wilco&a=schmilco";
   var albumDiv = document.getElementById('albumArt');
@@ -183,4 +176,15 @@ function wikiAPI() {
   // Send request to the server asynchronously
   xhr.send();
 
+}
+
+function addElements(){
+  var valueArray = ['first', 'second', 'third'];
+  for (i in valueArray) {
+    var newDiv = document.createElement('div');
+    newDiv.setAttribute('class', 'row');
+    newDiv.setAttribute('id', 'div '+i);
+    document.getElementById('addElements').appendChild(newDiv);
+    newDiv.innerText = valueArray[i];
+  };
 }
