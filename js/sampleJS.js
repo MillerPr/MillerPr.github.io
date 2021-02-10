@@ -63,7 +63,7 @@ function functionSample(number){
     return functionSample(number);
   }
 }
-console.log(functionSample(36));
+//console.log(functionSample(36));
 
 function mapLoad(){
   //Define the lat lon coordinate
@@ -188,3 +188,13 @@ function addElements(){
     newDiv.innerText = valueArray[i];
   };
 }
+
+/* function parseArray(array) {
+  console.log(array.length);
+  array.forEach(i => console.log(i));
+  var x = array.sort();
+  var y = x.length;
+  console.log(x[y-1]);
+}
+var newArray = ["Orange", "Apple", "Mango", "Banana", "Papaya"];
+parseArray(newArray); */
