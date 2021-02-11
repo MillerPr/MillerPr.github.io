@@ -63,7 +63,7 @@ function functionSample(number){
     return functionSample(number);
   }
 }
-console.log(functionSample(36));
+//console.log(functionSample(36));
 
 function mapLoad(){
   //Define the lat lon coordinate
@@ -147,34 +147,35 @@ function searchMusic(){
 
 function wikiAPI() {
   var searchTerm = document.getElementById('searchTerm').value;
-  var xhr = new XMLHttpRequest();
-  var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch=" + searchTerm;
+  var connect = new XMLHttpRequest();
+  var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=20&gsrsearch=" + searchTerm;
   // Provide 3 arguments (GET/POST, The URL, Async True/False)
-  xhr.open('GET', url, true);
+  connect.open('GET', url);
 
   // Once request has loaded...
-  xhr.onload = function () {
-    // Parse the request into JSON
-    var data = JSON.parse(this.response);
+  connect.onload = function () {
+    // Parse the request as JSON and save as variable
+    var wikiObject = JSON.parse(this.response);
 
-    // Log the data object
-    console.log(data);
+    // Log the wikiObject object
+    console.log(wikiObject);
 
     // Log the page objects
-    console.log(data.query.pages)
+    console.log(wikiObject.query.pages)
 
-    // Loop through the data object
+    // Loop through the wikiObject object
     // Pulling out the titles of each page
-    for (var i in data.query.pages) {
+    var pages = wikiObject.query.pages;
+    for (var i in pages) {
       var newDiv = document.createElement("div");
-      newDiv.setAttribute('class', 'row');
+      newDiv.setAttribute('class', 'row h4');
       document.getElementById("wiki").appendChild(newDiv);
-      newDiv.innerText = data.query.pages[i].title;
+      newDiv.innerText = wikiObject.query.pages[i].title;
       //add link to page https://en.wikipedia.org/?curid=+pageID
-    }
-  }
+    };
+  };
   // Send request to the server asynchronously
-  xhr.send();
+  connect.send();
 
 }
 
@@ -188,3 +189,14 @@ function addElements(){
     newDiv.innerText = valueArray[i];
   };
 }
+
+function parseArray(array) {
+  var newFruit = prompt("enter a fruit");
+  array.push(newFruit);
+  var x = array.sort();
+  var y = x.length;
+  console.log(x[y-1]);
+  console.log(array);
+
+}
+var newArray = ["papaya", "apple", "orange", "banana"];
