@@ -17,22 +17,22 @@
   crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body onload="wikiEvent()">
   <!-- JQuery loads nav here -->
   <div id="nav-placeholder"></div>
   <div class="container mt-3">
     <div id="title">Wiki API Example</div>
     <!-- User input field -->
-    <form>
+    <form id="wikiForm">
       <div class="row">
         <div class="col">
-          <input id="searchTerm" type="text" class="form-control" placeholder="Enter your search term here...">
+          <input id="searchTerm" name="searchTerm" type="text" class="form-control" placeholder="Enter your search term here...">
         </div>
       </div>
     </form>
 
     <!-- Button to submit search value and invoke JS function -->
-    <button type="submit" class="btn btn-primary my-3" onclick="wikiAPI()">Search</button>
+    <button id="wikiButton" type="submit" class="btn btn-primary my-3">Search</button>
 
     <!-- Output from JS function loads here -->
     <div class="container" id="wiki"></div>
