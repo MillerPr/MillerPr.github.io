@@ -145,40 +145,6 @@ function searchMusic(){
   });
 }
 
-function wikiAPI() {
-  var searchTerm = document.getElementById('searchTerm').value;
-  var connect = new XMLHttpRequest();
-  var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=20&gsrsearch=" + searchTerm;
-  // Provide 3 arguments (GET/POST, The URL, Async True/False)
-  connect.open('GET', url);
-
-  // Once request has loaded...
-  connect.onload = function () {
-    // Parse the request as JSON and save as variable
-    var wikiObject = JSON.parse(this.response);
-
-    // Log the wikiObject object
-    console.log(wikiObject);
-
-    // Log the page objects
-    console.log(wikiObject.query.pages)
-
-    // Loop through the wikiObject object
-    // Pulling out the titles of each page
-    var pages = wikiObject.query.pages;
-    for (var i in pages) {
-      var newDiv = document.createElement("div");
-      newDiv.setAttribute('class', 'row h4');
-      document.getElementById("wiki").appendChild(newDiv);
-      newDiv.innerText = wikiObject.query.pages[i].title;
-      //add link to page https://en.wikipedia.org/?curid=+pageID
-    };
-  };
-  // Send request to the server asynchronously
-  connect.send();
-
-}
-
 function addElements(){
   var valueArray = ['first', 'second', 'third'];
   for (i in valueArray) {
@@ -191,12 +157,11 @@ function addElements(){
 }
 
 function parseArray(array) {
-  var newFruit = prompt("enter a fruit");
-  array.push(newFruit);
-  var x = array.sort();
-  var y = x.length;
-  console.log(x[y-1]);
-  console.log(array);
-
+  var newFruit = prompt("enter a fruit"); //prompt asks for input
+  array.push(newFruit); //.push method adds a value to an array
+  var x = array.sort(); //.sort method sorts values in an array
+  var y = x.length; //.length method accesses the length of an array
+  console.log(x[y-1]); //log the last item in the array
+  console.log(array); //log the entire array
 }
-var newArray = ["papaya", "apple", "orange", "banana"];
+//var newArray = ["papaya", "apple", "orange", "banana"];

@@ -12,13 +12,21 @@ connect.onload = function () {
   console.log(wikiObject.query.pages);
   var pages = wikiObject.query.pages;
   for (i in pages) {
-    var newDiv = document.createElement("div");
+    //basic function
+    /* var newDiv = document.createElement("div");
     newDiv.setAttribute('class', 'row h4');
     document.getElementById("wiki").appendChild(newDiv);
-    newDiv.innerText = pages[i].title;
+    newDiv.innerText = pages[i].title; */
+
+    //super challenge
+    var pageURL = "https://en.wikipedia.org/?curid="
+    var newAnchor = document.createElement("a");
+    newAnchor.setAttribute('href', pageURL+pages[i].pageid);
+    newAnchor.setAttribute('class', 'd-block');
+    newAnchor.innerText = pages[i].title;
+    document.getElementById("wiki").appendChild(newAnchor);
   };
 }
-
 connect.send();
 
 //SUPER CHALLENGE
