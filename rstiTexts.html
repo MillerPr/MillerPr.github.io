@@ -4,51 +4,42 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--CSS links-->
+  <!--CSS links-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <link rel="stylesheet" href="css/millerpr.css">
 
-  <title>MusicAPI demo</title>
-<!--JS links-->
+  <title>RSTI Texts</title>
+  <!--JS links-->
   <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
   crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body onload="loadXML()">
   <div id="nav-placeholder"></div>
   <div class="container mt-3">
-    <div id="title">Music API Example</div>
-    <form>
-      <div class="row">
-        <div class="col">
-          <input id="artistInput" type="text" class="form-control" placeholder="Artist name">
-        </div>
-        <!-- <div class="col">
-          <input id="albumInput" type="text" class="form-control" placeholder="Album name">
-        </div> -->
-      </div>
-    </form>
-    <button type="submit" class="btn btn-primary my-3" onclick="searchMusic()">Search</button>
-    <div class="container" id="music">
-      <div class="row">
-        <!-- <div class="col">
-          <img id="albumArt"/>
-        </div> -->
-        <div class="col" id="discography">
-        </div>
-      </div>
-      <!-- <div class="container mt-4">
-        <div class="row" id="albumList"></div>
-      </div> -->
+    <div id="title"></div>
 
+    <div class="container">
+      <h4 id="setTitle"></h4>
+      <table class="table table-striped order-table" id="ochreTable">
+        <thead class="thead-dark" id="ochreTableColumns">
+          <tr>
+            <th style="text-align: left; width: 30%">Name</th>
+            <th style="text-align: left; width: 30%">Description</th>
+          </tr>
+        </thead>
+        <tbody id="ochreTableBody">
+        </tbody>
+      </table>
     </div>
+
   </div>
   <footer id="footerPlaceholder" class="d-none d-md-block footer container-fluid mt-auto py-3 bg-light"></footer>
 
-  <script src="js/musicAPIdiscog.js"></script>
+  <script src="js/loadTextList.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/footer.js"></script>
 </body>

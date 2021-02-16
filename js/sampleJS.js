@@ -165,3 +165,20 @@ function parseArray(array) {
   console.log(array); //log the entire array
 }
 //var newArray = ["papaya", "apple", "orange", "banana"];
+
+//Digital chalkboard for Feb 16.
+var userArray = []
+function sortArray(){
+  var userInput = document.getElementById('inputTerm').value;
+  var userOutput = document.getElementById('outputRow');
+  userArray.push(userInput)
+  console.log(userArray);
+  if (userArray.length == 4) {
+    userArray.sort();
+    for (i in userArray) {
+      var newLI = document.createElement('li');
+      newLI.innerText = userArray[i];
+      userOutput.appendChild(newLI);
+    }
+  };
+}

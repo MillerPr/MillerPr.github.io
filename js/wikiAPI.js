@@ -1,5 +1,6 @@
 function wikiAPI() {
-
+  var parentDiv = document.getElementById('wiki');
+  removeResults(parentDiv);
   var searchTerm = document.getElementById('searchTerm').value;
   var connect = new XMLHttpRequest();
   var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=20&gsrsearch=" + searchTerm;
@@ -26,6 +27,7 @@ function wikiAPI() {
       newAnchor.innerText = pages[i].title;
       document.getElementById("wiki").appendChild(newAnchor);
     };
+
   }
   connect.send();
 
@@ -37,9 +39,9 @@ function wikiAPI() {
   //Add the pageid to the end of the URL.
 }
 
-function wikiEvent() {
-  const wikiInput = document.getElementById("searchTerm");
-  const wikiButton = document.getElementById("wikiButton");
-  wikiInput.addEventListener("sbumit", wikiAPI);
-  wikiButton.addEventListener("click", wikiAPI);
+//This function will remove the previous results.
+function removeResults(parentDiv){
+  while (parentDiv.firstChild) {
+    parentDiv.removeChild(parentDiv.firstChild);
+  }
 }
