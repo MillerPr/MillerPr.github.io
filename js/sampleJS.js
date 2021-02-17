@@ -173,6 +173,8 @@ function sortArray(){
   var userOutput = document.getElementById('outputRow');
   userArray.push(userInput)
   console.log(userArray);
+  document.getElementById('tempList').innerHTML = 'Unsorted list: '+userArray.join(", ");
+  document.getElementById('inputTerm').value = '';
   if (userArray.length == 4) {
     userArray.sort();
     for (i in userArray) {
