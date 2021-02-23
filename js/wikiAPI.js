@@ -10,7 +10,7 @@ function wikiAPI() {
   connect.onload = function () {
     var wikiObject = JSON.parse(this.response);
     //console.log(wikiObject);
-    console.log(wikiObject.query.pages);
+    //console.log(wikiObject.query.pages);
     var pages = wikiObject.query.pages;
     for (i in pages) {
       //basic function
@@ -22,8 +22,8 @@ function wikiAPI() {
       //super challenge
       var pageURL = "https://en.wikipedia.org/?curid="
       var newAnchor = document.createElement("a");
-      newAnchor.setAttribute('href', pageURL+pages[i].pageid);
-      newAnchor.setAttribute('class', 'd-block');
+      newAnchor.href = pageURL+pages[i].pageid; //setAttribute('href', pageURL+pages[i].pageid);
+      newAnchor.className = 'd-block'; //setAttribute('class', 'd-block');
       newAnchor.innerText = pages[i].title;
       document.getElementById("wiki").appendChild(newAnchor);
     };

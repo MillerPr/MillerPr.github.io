@@ -24,7 +24,7 @@
   <div class="container mt-3">
     <div id="title">Input Array -- accept four items, presents sorted list</div>
     <!-- User input field, requires preventDefault function to stop refresh -->
-    <form id="wikiForm" onsubmit="sortArray(); event.preventDefault()">
+    <form id="wikiForm" onsubmit="longestValue(); event.preventDefault()">
       <div class="row">
         <div class="col">
           <input id="inputTerm" name="inputTerm" type="text" class="form-control"
@@ -37,7 +37,7 @@
     <div id="tempList" class="h4 py-3"></div>
 
     <!-- Buttons to submit value (invoke JS function) and reload the page. -->
-    <button id="wikiButton" type="submit" class="btn btn-primary my-3" onclick="sortArray()">Submit</button>
+    <button id="wikiButton" type="submit" class="btn btn-primary my-3" onclick="longestValue()">Submit</button>
     <button id="reloadButton" type="submit" class="btn btn-primary my-3" onclick="location.reload()">Start over</button>
 
     <!-- Output from JS function loads here -->

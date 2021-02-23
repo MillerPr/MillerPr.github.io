@@ -184,3 +184,12 @@ function sortArray(){
     }
   };
 }
+
+var longestVal = "";
+function longestValue(){
+  var userInput = document.getElementById('inputTerm').value;
+  if (userInput.length > longestVal.length) {
+    longestVal = userInput;
+  };
+  document.getElementById('outputRow').innerText = longestVal;
+}

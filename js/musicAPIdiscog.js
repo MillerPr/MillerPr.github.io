@@ -21,14 +21,14 @@ function searchMusic() {
         console.log(data);
         let jsonContent = data.album;
         console.log(jsonContent);
-        for (i in jsonContent) {
+        for (i=0; i <= jsonContent.length; i++) {
           var discographyDiv = document.getElementById('discography');
           var newRow = document.createElement('div');
           newRow.setAttribute('class', 'row');
           newRow.setAttribute('id', 'newRow_'+i);
           discographyDiv.appendChild(newRow);
           var newYearCol = document.createElement('div');
-          newYearCol.setAttribute('class', 'col');
+          newYearCol.setAttribute('class', 'col-sm-3');
           newYearCol.innerText = jsonContent[i].intYearReleased;
           newRow.appendChild(newYearCol);
           var newAlbumCol = document.createElement('div')
@@ -39,9 +39,3 @@ function searchMusic() {
       });
     });
   }
-
-
-  //Super challenge
-  //Use this base to return all albums.
-  //Iterate through them all and display them.
-  //https://www.theaudiodb.com/api/v1/json/1/searchalbum.php?s=" + artistName;
