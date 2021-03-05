@@ -1,4 +1,6 @@
-var link = "https://ochre.lib.uchicago.edu/ochre?uuid=accd571b-bae3-4d42-93d9-58b65ec79300";
+//full UUID 83739c7a-b4ce-47c7-b723-b5ccc7da71a2
+//sample UUID accd571b-bae3-4d42-93d9-58b65ec79300
+var link = "https://ochre.lib.uchicago.edu/ochre?uuid=83739c7a-b4ce-47c7-b723-b5ccc7da71a2";
 var textList = [];
 
 function loadXML(){
@@ -42,12 +44,14 @@ function listTexts(sourceXML) {
     button.setAttribute('onclick','photoBlock(this.id, xmlDOM)');
     button.setAttribute('target', '_blank');
     button.className = 'textSelection btn btn-link';
+    //Text label for button column
     var textLabel = textList[i].childNodes[0].childNodes[0].innerHTML
     button.textContent= textLabel;
     document.getElementById('row_'+i).appendChild(td);
     document.getElementById('td_row_'+i).appendChild(button);
     var td2 = document.createElement('td');
     td2.className = 'Description';
+    //Text description for second column
     var textDescription = textList[i].childNodes[3].innerHTML;
     td2.textContent = textDescription;
     document.getElementById('row_' + i).appendChild(td2);
