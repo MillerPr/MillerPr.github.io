@@ -193,3 +193,4 @@ function longestValue(){
   };
   document.getElementById('outputRow').innerText = longestVal;
 }
+

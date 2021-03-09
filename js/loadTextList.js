@@ -28,6 +28,12 @@ function listTexts(sourceXML) {
   //The table element already exists on the HTML page.
   //This just adds rows.
   for (var i = 0; i < textList.length; i++) {
+    var textAliasNode = textList[i].childNodes[0].childNodes;
+    var textNames = []
+    for (var j = 1; j < textAliasNode.length; j++){
+      textNames.push(textAliasNode[j].innerHTML);
+    }
+    //console.log(textNames);
     var tr = document.createElement('tr');
     tr.className = 'ochreTableRows';
     //Set unique attributes per row.
@@ -49,12 +55,17 @@ function listTexts(sourceXML) {
     button.textContent= textLabel;
     document.getElementById('row_'+i).appendChild(td);
     document.getElementById('td_row_'+i).appendChild(button);
+    //Text aliases for second column
     var td2 = document.createElement('td');
-    td2.className = 'Description';
-    //Text description for second column
-    var textDescription = textList[i].childNodes[3].innerHTML;
-    td2.textContent = textDescription;
+    td2.className = 'Alias';
+    td2.textContent = textNames.join(', ');
     document.getElementById('row_' + i).appendChild(td2);
+    //Text description for third column
+    var td3 = document.createElement('td');
+    td3.className = 'Description';
+    var textDescription = textList[i].childNodes[3].innerHTML;
+    td3.textContent = textDescription;
+    document.getElementById('row_' + i).appendChild(td3);
   };
 };
 
