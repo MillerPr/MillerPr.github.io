@@ -6,7 +6,6 @@ def decimalToBase(dn, db):
         dn = dn / db
     return ''.join(digits)
 
-
 def baseToDecimal(bn, cb):
   '''Convert Base No(bn) a positive number to decimal wrt current Base(cb)'''
   n = 0
