@@ -2,11 +2,10 @@ def solution(input, b):
   #b is the radix
   cycleCount = 1
   PRIMARY = input
-  runCycle(input, b, cycleCount, PRIMARY)
+  cycleLog = {'1':0}
+  return runCycle(input, b, cycleCount, PRIMARY, cycleLog)
 
-def runCycle(input, b, cycleCount, PRIMARY):
-
-  print(PRIMARY+' '+str(cycleCount)+' primary')
+def runCycle(input, b, cycleCount, PRIMARY, cycleLog):
   tempInput = []
   k = len(input)
 
@@ -43,17 +42,23 @@ def runCycle(input, b, cycleCount, PRIMARY):
       d = z%b #d represents the remainder, which becomes the indexed digit in the base
       newZ = str(d)+newZ #newZ is the concatenated sequence of new digits 220101 = 658
       z = j
+      #return newZ
+  else:
+    newZ = str(z)
 
-##SOMEHOW THE MATCH IS NOT HAPPENING IN THE THIRD CYCLE.
-    while len(newZ) < k:
-      newZ = '0'+newZ
-    if newZ == PRIMARY:
-      return print(cycleCount)
-    else:
-      print(newZ+' '+str(cycleCount))
-      if cycleCount > 5:
-        return cycleCount
-      else:
-        return runCycle(newZ, b, cycleCount+1, PRIMARY)
+  while len(newZ) < k:
+    newZ = '0'+newZ
+  #Check each new cycle z-value to see if it is in the dictionary
+  #If not, log each cycle z-value as key-val pair with the cycle number, e.g. 210111:3
+  #If so, report the cycle value as the answer
 
-print(solution('210022', 3))
+  if newZ in cycleLog.keys():
+    answer = cycleCount - cycleLog.get(newZ)
+    return answer
+  else:
+    cycleLog[newZ] = cycleCount
+    #print(newZ+' '+str(cycleCount))
+    return runCycle(newZ, b, cycleCount+1, PRIMARY, cycleLog)
+
+
+solution('210022', 3)

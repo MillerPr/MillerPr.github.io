@@ -1,4 +1,5 @@
 function searchMusic() {
+  //Update to use MusicBrainz API https://musicbrainz.org/doc/Beginners_Guide
   //declare variable from user input
   var artistName = document.getElementById('artistInput').value;
   var albumName = document.getElementById('albumInput').value;
