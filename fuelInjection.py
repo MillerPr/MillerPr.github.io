@@ -5,7 +5,7 @@ def solution(n):
     n=n+1
   while n!=1:
     n = n/2
-    cycleCount = cycleCount + 1
+    cycleCount += 1
   return cycleCount
 
 
