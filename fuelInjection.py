@@ -1,8 +1,9 @@
 def solution(n):
   n = int(n)
-  cycleCount = 1
+  cycleCount = 0
   if n%2!=0:
     n=n+1
+    cycleCount += 1
   while n!=1:
     n = n/2
     cycleCount += 1
