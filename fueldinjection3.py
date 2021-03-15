@@ -1,29 +1,37 @@
 def solution(n):
-  factorList = [16, 32, 64, 128, 256]
+  n = int(n)
   cycleCount = 0
   if n == 0 or n == 1:
     return 1
   else:
-    checkAnswer(n, cycleCount, factorList)
+    return print(checkAnswer(n, cycleCount))
 
-def checkAnswer(n, cycleCount, factorList):
+def checkAnswer(n, cycleCount):
   if n == 1:
-    return print(cycleCount)
+    return cycleCount
   else:
     cycleCount += 1
+    #print(cycleCount)
     if n % 2 != 0:
-      for f in factorList:  # check factor +1
-        if n + 1 == f:
+      for f in range(310):
+        if n + 1 == 2**f:
+          #print(2**f)
           n = n + 1  # this is the only place we add one
-          return checkAnswer(n, cycleCount, factorList)
-        else: #otherwise just minus 1
-          n = n - 1
-          return checkAnswer(n, cycleCount, factorList)
+          while f >= 2:
+            f = f/2
+            cycleCount += 1
+          return int((cycleCount + 1) + f)
+          #return checkAnswer(n, cycleCount)
+      else: #otherwise just minus 1
+        n = n - 1
+        return checkAnswer(n, cycleCount)
     else:
-      n = n/2
-      return checkAnswer(n, cycleCount, factorList)
+      n = int(n//2)
+      return checkAnswer(n, cycleCount)
 
-#solution(4)
-#solution(15)
+#solution('15')
+#solution('99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999')
+solution('999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999')
 #solution(309)
 #solution(64)
+#solution(4)
