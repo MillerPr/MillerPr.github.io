@@ -1,7 +1,7 @@
 function createXquery() {
   document.getElementById('xqueryOutput').innerHTML = "";
   var searchTerm = document.getElementById('searchTerm').value;
-  var url = "https://ochre.lib.uchicago.edu/ochre?&xquery=for%20$q%20in%20input()/ochre[@uuid=%27fa3dd2d3-5e91-48de-9989-0ce3f8e18a1c%27]%20return%20$q//spatialUnit[text()[contains(.,'" + searchTerm + "')]]";
+  var url = "https://ochre.lib.uchicago.edu/ochre?&xquery=for%20$q%20in%20input()/ochre[@uuid=%27fa3dd2d3-5e91-48de-9989-0ce3f8e18a1c%27]%20return%20$q//spatialUnit[contains(text(),'" + searchTerm + "')]";
   console.log(url);
   XMLrequest(url);
   console.log('loadXML -- OK');
