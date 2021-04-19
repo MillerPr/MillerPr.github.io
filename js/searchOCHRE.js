@@ -25,7 +25,7 @@ function listResults(xmlResults){
 
   for (var i = 0; i < itemList.length; i++) {
     var itemLink = document.createElement('a');
-    itemLink.href = 'https://ochre.lib.uchicago.edu/ochre?uuid='+itemList[i].attributes[0].nodeValue;
+    itemLink.href = 'http://ochre.lib.uchicago.edu/ochre?uuid='+itemList[i].attributes[0].nodeValue;
     itemLink.id = 'itemLink_'+i;
     var listItem = document.createElement('div');
     listItem.id = 'resultItem_'+i;
