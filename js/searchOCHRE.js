@@ -1,7 +1,7 @@
 function searchDescription() {
   document.getElementById('xqueryOutput').innerHTML = "";
   var searchTerm = document.getElementById('searchDesc').value;
-  var url = "http://ochre.lib.uchicago.edu/ochre?&xquery=for%20$q%20in%20input()/ochre[@uuid='ca126815-a753-4794-9277-cbb100942cc8']/set/items%20return%20<apiResults>%20{%20for%20$s%20in%20$q/spatialUnit[description[matches(text(),'" + searchTerm + "', 'i')]]%20return%20<item>%20{$s/@uuid}%20{$s/identification/label}%20{$s/description}</item>%20}%20</apiResults>"
+  var url = "https://ochre.lib.uchicago.edu/ochre?&xquery=for%20$q%20in%20input()/ochre[@uuid='ca126815-a753-4794-9277-cbb100942cc8']/set/items%20return%20<apiResults>%20{%20for%20$s%20in%20$q/spatialUnit[description[matches(text(),'" + searchTerm + "', 'i')]]%20return%20<item>%20{$s/@uuid}%20{$s/identification/label}%20{$s/description}</item>%20}%20</apiResults>"
   return fetch(url)
         .then(response => response.text())
         .then(data =>{
@@ -21,7 +21,7 @@ function createXquery() {
   //var url = "http://ochre.lib.uchicago.edu/ochre?&xquery=for%20$q%20in%20input()/ochre[@uuid=%27fa3dd2d3-5e91-48de-9989-0ce3f8e18a1c%27]%20return%20<apiResults>{$q//spatialUnit[contains(text(),'" + searchTerm + "')]}</apiResults>";
 
   //complex url
-  var url = "http://ochre.lib.uchicago.edu/ochre?&xquery=for%20$q%20in%20input()/ochre[@uuid='ca126815-a753-4794-9277-cbb100942cc8']/set/items%20return%20<apiResults>%20{%20for%20$s%20in%20$q/spatialUnit[identification/label[matches(text(),'" + searchTerm + "', 'i')]]%20return%20<item>%20{$s/@uuid}%20{$s/identification/label}%20{$s/description}</item>%20}%20</apiResults>"
+  var url = "https://ochre.lib.uchicago.edu/ochre?&xquery=for%20$q%20in%20input()/ochre[@uuid='ca126815-a753-4794-9277-cbb100942cc8']/set/items%20return%20<apiResults>%20{%20for%20$s%20in%20$q/spatialUnit[identification/label[matches(text(),'" + searchTerm + "', 'i')]]%20return%20<item>%20{$s/@uuid}%20{$s/identification/label}%20{$s/description}</item>%20}%20</apiResults>"
 
     return fetch(url)
         .then(response => response.text())
