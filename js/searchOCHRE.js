@@ -1,7 +1,7 @@
 function searchProject() {
   document.getElementById('xqueryOutput').innerHTML = "";
   var searchTerm = document.getElementById('searchProject').value;
-  var url = "http://ochre.lib.uchicago.edu/ochre?&xquery=for%20$q%20in%20input()/ochre[@uuidBelongsTo=%2746ccab46-9c3f-4448-8476-2bf18236791e%27]/* where $q[identification/label[matches(text(),'" + searchTerm + "', 'i')]] return <apiResults><item>{$q/@uuid}%20{$q/identification/label}%20{$q/description}</item></apiResults>";
+  var url = "https://ochre.lib.uchicago.edu/ochre?&xquery=for%20$q%20in%20input()/ochre[@uuidBelongsTo=%2746ccab46-9c3f-4448-8476-2bf18236791e%27]/* where $q[identification/label[matches(text(),'" + searchTerm + "', 'i')]] return <apiResults><item>{$q/@uuid}%20{$q/identification/label}%20{$q/description}</item></apiResults>";
 
   //var url = "http://ochre.lib.uchicago.edu/ochre?&xquery=for%20$q%20in%20input()/ochre[@uuidBelongsTo=%2746ccab46-9c3f-4448-8476-2bf18236791e%27]/*%20return%20<apiResults>{for%20$s%20in%20$q[identification/label[matches(text(),'" + searchTerm + "', 'i')]]%20return%20%3Citem%3E%20{$s/@uuid}%20{$s/identification/label}%20{$s/description}%3C/item%3E}</apiResults>";
   //var url = "https://ochre.lib.uchicago.edu/ochre?&xquery=for%20$q%20in%20input()/ochre[@belongsTo=%27RSTI%27]/*%20return%20for%20$s%20in%20$q[identification/label[matches(text(),'" + searchTerm + "', 'i')]]%20return%20%3Citem%3E%20{$s/@uuid}%20{$s/identification/label}%20{$s/description}%3C/item%3E";
