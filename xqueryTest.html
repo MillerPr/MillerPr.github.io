@@ -17,8 +17,10 @@
   <div class="container mt-3">
     <h1>OCHRE String Search</h1>
     <h5>This is a proof-of-concept to demonstrate string searching using the OCHRE API</h5>
-    <h5>The API is configured to search one spatial hierarchy in the LCEIC project</h5>
-    <div id="title">Input string search</div>
+    <h5>The API is configured to perform a case-insensitive search in one Set in the LCEIC project</h5>
+    <hr/>
+    <h5>Search items by name</h5>
+    <div>Input string search</div>
     <!-- User input field, requires preventDefault function to stop refresh -->
     <form id="wikiForm" onsubmit="createXquery(); event.preventDefault()">
       <div class="row">
@@ -28,6 +30,21 @@
       </div>
     </form>
     <button id="xqueryButton" type="submit" class="btn btn-primary my-3" onclick="createXquery()">Submit</button>
+  </div>
+
+  <div class="container mt-3">
+    <h5>Search items by description</h5>
+    <div>Input string search</div>
+    <!-- User input field, requires preventDefault function to stop refresh -->
+    <form id="wikiForm_02" onsubmit="searchDescription(); event.preventDefault()">
+      <div class="row">
+        <div class="col">
+          <input id="searchDesc" name="inputTerm" style="width:60vw" type="text" class="form-control"
+            placeholder="Enter your search term here...">
+        </div>
+      </div>
+    </form>
+    <button id="xqueryButton_02" type="submit" class="btn btn-primary my-3" onclick="searchDescription()">Submit</button>
   </div>
 
   <div id="xqueryOutput" class="container">
