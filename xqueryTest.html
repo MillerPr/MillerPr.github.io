@@ -50,6 +50,21 @@
   </div>
 
   <div class="container mt-3">
+    <h5>Search resources by name from the Tiwanaku project</h5>
+    <div>Input string search</div>
+    <!-- User input field, requires preventDefault function to stop refresh -->
+    <form id="wikiForm_04" onsubmit="searchResource(); event.preventDefault()">
+      <div class="row">
+        <div class="col">
+          <input id="searchResDesc" name="inputTerm" style="width:60vw" type="text" class="form-control"
+            placeholder="Try searching for N2636-E2948...">
+        </div>
+      </div>
+    </form>
+    <button id="xqueryButton_04" type="submit" class="btn btn-primary my-3" onclick="searchResource()">Submit</button>
+  </div>
+
+  <div class="container mt-3">
     <h5>Search all items from RSTI, by name</h5>
     <div>Input string search using Regular Expression</div>
     <!-- User input field, requires preventDefault function to stop refresh -->
