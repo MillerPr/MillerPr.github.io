@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CSS links -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/millerpr.css">
+
+  <title>OpenContext API demo</title>
+
+  <!-- JS links -->
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+  crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- JQuery loads nav here -->
+  <div id="nav-placeholder"></div>
+  <div class="container mt-3">
+    <div id="title">OpenContext API Example</div>
+    <!-- User input field, requires preventDefault function to stop refresh -->
+    <form id="wikiForm" onsubmit="OCapi(); event.preventDefault()">
+      <div class="row">
+        <div class="col">
+          <input id="searchTerm" name="searchTerm" type="text" class="form-control" placeholder="Enter your search term here...">
+        </div>
+      </div>
+    </form>
+
+    <!-- Button to submit search value and invoke JS function -->
+    <button id="wikiButton" type="submit" class="btn btn-primary my-3" onclick="OCapi()">Search</button>
+
+    <!-- Output from JS function loads here -->
+    <div class="container" id="ocContainer">
+      <div class="row" id="ocDiv"></div>
+    </div>
+
+  </div>
+
+  <!-- JQuery loads footer here -->
+  <footer id="footerPlaceholder" class="d-none d-md-block footer container-fluid mt-auto py-3 bg-light"></footer>
+
+  <!-- Load custom JS files -->
+  <script src="js/OCapi.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/footer.js"></script>
+</body>
+
+</html>
