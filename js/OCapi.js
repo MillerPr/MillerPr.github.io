@@ -19,8 +19,21 @@ function OCapi() {
       //basic function
       var newDiv = document.createElement("div");
       newDiv.setAttribute('class', 'row h4');
+      newDiv.setAttribute('id', 'newRow_'+i);
       document.getElementById("ocDiv").appendChild(newDiv);
-      newDiv.innerText = features[i].label;
+      var newCol_a = document.createElement("div");
+      newCol_a.setAttribute('class', 'col');
+      newCol_a.setAttribute('id', 'newCol_a_' + i);
+      newCol_a.innerText = features[i].label;
+      var newCol_b = document.createElement("div");
+      newCol_b.setAttribute('class', 'col');
+      newCol_b.setAttribute('id', 'newCol_b_' + i);
+      newCol_b.innerText = features[i].label;
+      document.getElementById('newRow_' + i).appendChild(newCol_b);
+      var newImg = document.createElement("img");
+      newImg.setAttribute('src', features[i].properties.thumbnail);
+      newImg.setAttribute('style', 'width: 10%');
+      document.getElementById('newCol_b_' + i).appendChild(newImg);
       }
     }
   };
