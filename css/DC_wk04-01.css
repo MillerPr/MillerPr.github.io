@@ -1,0 +1,36 @@
+h1 {
+  color: #800000;
+}
+
+body {
+  padding-bottom: 100px;
+}
+
+h1 {
+  letter-spacing: 3px;
+}
+
+nav {
+  background-color: #800000;
+}
+
+.cardBtn {
+  background-color: #5b8fa8;
+  color: white;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+}
+
+img {
+  max-width: 150px;
+}
+
+/*# sourceMappingURL=DC_wk04-01.css.map */

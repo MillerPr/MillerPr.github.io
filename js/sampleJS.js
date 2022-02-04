@@ -1,14 +1,27 @@
-function evalNumber(){
-  var inputValue = parseInt(prompt("Enter any five-digit number without commas"))
-  if (isNaN(inputValue)||inputValue>99999||inputValue<10000||!(Number.isInteger(inputValue))) {
-    alert(inputValue + " is not a valid 5-digit number.")
-  } else if (inputValue%2==0){
-    alert(inputValue + " is an even number.")
-  } else {
-    alert(inputValue + " is an odd number.")
-  }
+/*
+Various scripts for digital chalkboard and more.
+Note: event listeners are at the botton of the file.
+*/
+
+//DC functions
+function howdy(){
+  var person = prompt("Please enter your name", "YOUR NAME HERE");
+  var city = prompt("Where do you want to visit?");
+  // alert("Howdy " + person + ". " + city+" sounds like a nice place to visit.")
+  // alternate approach with backticks (i.e. template literals) with embedded expressions as substitutions.
+  alert(`Howdy ${person}. ${city} sounds like a nice place to visit.`);
 }
 
+function lastItem() {
+  var arrayName = ['Watermelon', 'Apple', 'Orange', 'Kiwi']
+  var y = arrayName.slice();
+  var selectedElement = document.getElementById("fruit");
+  var x = arrayName.sort();
+  selectedElement.innerText = `The original array is [${y}], and I sorted it alphabetically.
+  The last item of the sorted array is ${x[x.length - 1]}.`;
+}
+
+//Video functions
 function conditional(){
   alert("Use Inspect to see the console and inspect the code.");
   var currentHour = new Date().getHours();
@@ -21,9 +34,56 @@ function conditional(){
   }
 }
 
-function howdy(){
-  var person = prompt("Please enter your name", "YOUR NAME HERE");
-  alert("Howdy " + person);
+function evalNumber(){
+  var inputValue = parseInt(prompt("Enter any five-digit number without commas"))
+  if (isNaN(inputValue)||inputValue>99999||inputValue<10000||!(Number.isInteger(inputValue))) {
+    alert(inputValue + " is not a valid 5-digit number.")
+  } else if (inputValue%2==0){
+    alert(`${inputValue} is an even number.`)
+  } else {
+    alert(`${inputValue} is an odd number.`)
+  };
+};
+
+// Ternary operator to check truthiness for evaluating a number looks like sentence grammar.
+// Is STATEMENT true ? truthy action : falsy action
+// truthy action can be just about anything
+// Falsy includes false, null, NaN, 0, "", and undefined
+// Falsy action can be another STATEMENT to evaluate with ?.
+// Use this to assign conditional values to variables--very helpful.
+// E.g.
+/* var age = parseInt(prompt("How old are you?"));;
+var beverage = (age >= 21) ? "Wine" : "Grape Juice";
+console.log(beverage); // "Wine" */
+function evalNumberTernary() {
+  var inputValue = parseInt(prompt("Enter any five-digit integer without commas"));
+  isNaN(inputValue) || inputValue > 99999 || inputValue < 10000 || !(Number.isInteger(inputValue)) ?
+  alert(inputValue + " is not a valid 5-digit number.") :
+  inputValue % 2 == 0 ?
+  alert(`${inputValue} is an even number.`) :
+  alert(`${inputValue} is an odd number.`)
+};
+
+// User ternary to construct a function with parameters and capture nulls.
+// This is like saying: let myVar = function (myParam) below
+// In this example, we are treating the myParam argument as an object to which we can assign properties.
+// Function parameters (i.e. arguments) are an array of objects.
+myVar = myParam => {
+  let property = myParam ? myParam.property : 'NoGood'
+  return `The property is ${property}`
+};
+// Here is the longer version
+let myVarLong = function (myParam2){
+  console.log(arguments[0]);
+  let property2 = myParam2 ? myParam2.property2: 'no';
+  return `The property is ${property2}`;
+}
+
+function changeTitle(){
+  let selectedElement = document.getElementById("buttonGroup");
+  console.log(selectedElement);
+  selectedElement.innerText = "Buttons";
+  // selectedElement.style.display = "none";
 }
 
 function scopeValues() {
@@ -37,22 +97,23 @@ function scopeValues() {
   const z = x;
   alert("Use Inspect to see the console and inspect the code.")
   console.log("Check the sources to see this code and study the scope of the declarations.")
-  console.log("Value of x as originally declared: " + x);
-  console.log("Value of y as originally declared: " + y);
+  console.log(`Value of x as originally declared: ${x}`);
+  console.log(`Value of y as originally declared:  ${y}`);
   var x = x+2;
-  console.log("Value of x + 2: " + x);
-  console.log("Value of z: " + z + " does not change.");
+  console.log(`Value of x + 2:  ${x}`);
+  console.log(`Value of z:  ${z}  does not change.`);
 };
 
-
-function changeTitle(){
-  let selectedElement = document.getElementById("programCard");
-  console.log(selectedElement);
-  selectedElement.innerText = "DIGS";
-  selectedElement.style.display = "none";
-
+function parentFunction() {
+  let a = 1;
+  function childFunction() {
+    var b = a + 2;
+    return b;
+  };
+  return childFunction();
 }
 
+//Recursive function from 2nd video
 function functionSample(number){
   if (number===0) {
     console.log("Number is even.")
@@ -65,7 +126,10 @@ function functionSample(number){
 }
 //console.log(functionSample(36));
 
-function mapLoad(){
+//Map from 2nd video
+// window.onload replaces <body onload...>.
+// no need for a named function like mapload() in this strategy.
+window.onload = function (){
   //Define the lat lon coordinate
   var latLng = [41.789649, -87.599702];
 
@@ -95,26 +159,17 @@ function mapLoad(){
   function onMapClick(e) {
     popup
     .setLatLng(e.latlng)
-    .setContent("You clicked the map at " + e.latlng.toString())
+    .setContent(`You clicked the map at  ${e.latlng.toString()}`)
     .openOn(map);
   }
   map.on('click', onMapClick);
-}
-
-function parentFunction() {
-  let a = 1;
-  function childFunction() {
-    var b = a + 2;
-    return b;
-  };
-  return childFunction();
 }
 
 function searchMusic(){
   var artistName = document.getElementById('artistInput').value;
   var albumName = document.getElementById('albumInput').value;
 
-  var url = "https://www.theaudiodb.com/api/v1/json/1/searchalbum.php?s=" + artistName + "&a=" + albumName;
+  var url = `https://www.theaudiodb.com/api/v1/json/1/searchalbum.php?s=${artistName}&a=${albumName}`;
   //var url = "https://www.theaudiodb.com/api/v1/json/1/searchalbum.php?s=wilco&a=schmilco";
   var albumDiv = document.getElementById('albumArt');
 
@@ -123,7 +178,7 @@ function searchMusic(){
     function(response) {
       if (response.status !== 200) {
         console.log('Looks like there was a problem. Status Code: ' +
-          response.status);
+        response.status);
         return;
       }
 
@@ -139,58 +194,95 @@ function searchMusic(){
 
       });
     }
-  )
-  .catch(function(err) {
-    console.log('Fetch Error :-S', err);
-  });
-}
+    )
+    .catch(function(err) {
+      console.log('Fetch Error :-S', err);
+    });
+  }
 
-function addElements(){
-  var valueArray = ['first', 'second', 'third'];
-  for (i in valueArray) {
-    var newDiv = document.createElement('div');
-    newDiv.setAttribute('class', 'row');
-    newDiv.setAttribute('id', 'div '+i);
-    document.getElementById('addElements').appendChild(newDiv);
-    newDiv.innerText = valueArray[i];
-  };
-}
+  function addElements(){
+    var valueArray = ['first', 'second', 'third'];
+    for (i in valueArray) {
+      var newDiv = document.createElement('div');
+      newDiv.setAttribute('class', 'row');
+      newDiv.setAttribute('id', 'div '+i);
+      document.getElementById('addElements').appendChild(newDiv);
+      newDiv.innerText = valueArray[i];
+    };
+  }
 
-function parseArray(array) {
-  var newFruit = prompt("enter a fruit"); //prompt asks for input
-  array.push(newFruit); //.push method adds a value to an array
-  var x = array.sort(); //.sort method sorts values in an array
-  var y = x.length; //.length method accesses the length of an array
-  console.log(x[y-1]); //log the last item in the array
-  console.log(array); //log the entire array
-}
-//var newArray = ["papaya", "apple", "orange", "banana"];
+  function parseArray(array) {
+    var newFruit = prompt("enter a fruit"); //prompt asks for input
+    array.push(newFruit); //.push method adds a value to an array
+    var x = array.sort(); //.sort method sorts values in an array
+    var y = x.length; //.length method accesses the length of an array
+    console.log(x[y-1]); //log the last item in the array
+    console.log(array); //log the entire array
+  }
+  //var newArray = ["papaya", "apple", "orange", "banana"];
 
-//Digital chalkboard for Feb 16.
-var userArray = []
-function sortArray(){
-  var userInput = document.getElementById('inputTerm').value;
-  var userOutput = document.getElementById('outputRow');
-  userArray.push(userInput)
-  console.log(userArray);
-  document.getElementById('tempList').innerHTML = 'Unsorted list: '+userArray.join(", ");
-  document.getElementById('inputTerm').value = '';
-  if (userArray.length == 4) {
-    userArray.sort();
-    for (i in userArray) {
-      var newLI = document.createElement('li');
-      newLI.innerText = userArray[i];
-      userOutput.appendChild(newLI);
-    }
-  };
-}
+  //Digital chalkboard for Feb 16.
+  var userArray = []
+  function sortArray(){
+    var userInput = document.getElementById('inputTerm').value;
+    var userOutput = document.getElementById('outputRow');
+    userArray.push(userInput)
+    console.log(userArray);
+    document.getElementById('tempList').innerHTML = 'Unsorted list: '+userArray.join(", ");
+    document.getElementById('inputTerm').value = '';
+    if (userArray.length == 4) {
+      userArray.sort();
+      for (i in userArray) {
+        var newLI = document.createElement('li');
+        newLI.innerText = userArray[i];
+        userOutput.appendChild(newLI);
+      }
+    };
+  }
 
-var longestVal = "";
-function longestValue(){
-  var userInput = document.getElementById('inputTerm').value;
-  if (userInput.length > longestVal.length) {
-    longestVal = userInput;
-  };
-  document.getElementById('outputRow').innerText = longestVal;
-}
+  var longestVal = "";
+  function longestValue(){
+    var userInput = document.getElementById('inputTerm').value;
+    if (userInput.length > longestVal.length) {
+      longestVal = userInput;
+    };
+    document.getElementById('outputRow').innerText = longestVal;
+  }
 
+  // Event Listeners
+  // document.addEventListener('EVENT', FUNCTION, OPTIONS)
+
+  document.addEventListener('DOMContentLoaded', () => {
+
+    const btn1 = document.getElementById("button_01");
+    btn1.addEventListener('click', howdy);
+
+    const btn2 = document.querySelector('#button_02');
+    btn2.addEventListener('click', lastItem);
+
+    const btn3 = document.querySelector('#button_03');
+    btn3.addEventListener('click', sortItemsInput);
+
+    const btn4 = document.querySelector('#button_04');
+    btn4.addEventListener('click', conditional);
+
+    const btn5 = document.querySelector('#button_05');
+    btn5.addEventListener('click', evalNumberTernary);
+
+    const btn6 = document.querySelector('#button_06');
+    btn6.addEventListener('click', changeTitle);
+
+    const btn7 = document.querySelector('#button_07');
+    btn7.addEventListener('click', scopeValues);
+
+    // Below are two ways to invoke a function with options.
+    // In the second case, we log the event (e) object to the console.
+    // We don't need the (e) unless we need to access something about the target or event.
+    // Insepct the console to see what is available on the event (e) object.
+    const btn8 = document.querySelector('#button_08');
+    //btn8.addEventListener('click', function(){alert('A nested function has access to variables in the parent function: 2 + 1 = ' + parentFunction())});
+    btn8.addEventListener('click', () => {
+      //console.log(e);
+      alert('A nested function has access to variables in the parent function: 2 + 1 = ' + parentFunction());
+    })
+  })
