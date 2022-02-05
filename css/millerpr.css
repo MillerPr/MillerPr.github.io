@@ -14,6 +14,34 @@ nav {
   background-color: #800000;
 }
 
+/* Toast */
+.toast {
+  background-color: #ffb547;
+}
+
+/* Off Canvas */
+.btn-close {
+  align-items: flex-end;
+}
+
+#offCanvasButton {
+  color: #767676;
+  font-weight: 600;
+}
+
+.offcanvas-header {
+  background-color: #5b8fa8;
+}
+
+.offcanvas {
+  background-color: #d6d6ce;
+}
+
+.offcanvas-title {
+  text-align: center;
+}
+
+/* Cards */
 .cardBtn {
   background-color: #5b8fa8;
   color: white;
