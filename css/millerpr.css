@@ -14,10 +14,20 @@ nav {
   background-color: #800000;
 }
 
-#subHead {
-  background: linear-gradient(45deg, white 30%, #b1746f 30%, #b1746f 40%);
+@media only screen and (min-width: 990px) {
+  #subHead {
+    background: linear-gradient(45deg, white 30%, #b1746f 30%, #b1746f 40%);
+  }
 }
+@media only screen and (max-width: 990px) {
+  .card {
+    padding-bottom: 20px;
+  }
 
+  #offCanvasButton {
+    font-size: small;
+  }
+}
 /* Toast */
 .toast {
   background-color: #ffb547;
