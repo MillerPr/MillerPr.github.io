@@ -1,5 +1,5 @@
 h1 {
-  color: #800000;
+  color: white;
 }
 
 body {
@@ -7,11 +7,15 @@ body {
 }
 
 h1 {
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
 
 nav {
   background-color: #800000;
+}
+
+#subHead {
+  background: linear-gradient(45deg, white 30%, #b1746f 30%, #b1746f 40%);
 }
 
 /* Toast */
@@ -45,6 +49,10 @@ nav {
 .cardBtn {
   background-color: #5b8fa8;
   color: white;
+}
+
+.card-body {
+  background-color: #d6d6ce;
 }
 
 #map {

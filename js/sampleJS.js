@@ -3,6 +3,8 @@ Various scripts for digital chalkboard and more.
 Note: event listeners are at the botton of the file.
 */
 
+
+
 //DC functions
 function howdy(){
   var person = prompt("Please enter your name", "YOUR NAME HERE");
@@ -19,6 +21,47 @@ function lastItem() {
   var x = arrayName.sort();
   selectedElement.innerText = `The original array is [${y}], and I sorted it alphabetically.
   The last item of the sorted array is ${x[x.length - 1]}.`;
+}
+
+// Sort four items input from the user.
+// An array is an indexed list of values.
+// How does the script know that inputArray is an array?
+// An array comes with many special methods.
+// Note use of template literals with embedded expression—requires backticks `string`.
+function sortItemsInput() {
+  var inputArray = [], inputCat = ['fruit', 'animal', 'state', 'country'];
+  inputCat.forEach((item) => {
+    var newInput = prompt(`enter one ${item}`);
+    inputArray.push(newInput);
+  });
+  document.getElementById('outputArray').innerText = `You entered ${inputArray.join(', ')}.
+      I sorted them ${inputArray.sort().join(', ')}`;
+};
+
+// This lays out the logic of the previous function w/o forEach.
+function sortItemsInputManual() {
+  let outputArray = document.getElementById("outputArray");
+  var newFruit = prompt("enter a fruit"); //prompt asks for input
+  var newAnimal = prompt("enter an animal"); //prompt asks for input
+  var newState = prompt("enter a state"); //prompt asks for input
+  var newCountry = prompt("enter a country"); //prompt asks for input
+
+  var array = []
+  array.push(newFruit.toLowerCase()); //.push method adds a value to an array
+  array.push(newAnimal.toLowerCase()); //.push method adds a value to an array
+  array.push(newState.toLowerCase()); //.push method adds a value to an array
+  array.push(newCountry.toLowerCase()); //.push method adds a value to an array
+
+  var x = array.sort(); //.sort method sorts values in an array
+  // var y = x.length; //.length method accesses the length of an array
+  console.log(x); //log the the sorted array
+  console.log(array); //log the entire array
+  outputArray.innerText = "The four items you typed are: " +
+    newFruit + ", " +
+    newAnimal + ", " +
+    newState + ", " +
+    newCountry +
+    ". I lowered all the letters and sorted them alphabetically: " + x.join(', ');
 }
 
 //Video functions
@@ -253,6 +296,10 @@ function searchMusic(){
   // document.addEventListener('EVENT', FUNCTION, OPTIONS)
 
   document.addEventListener('DOMContentLoaded', () => {
+    // Load the toast
+    var toastLiveExample = document.getElementById('liveToast')
+    var toast = new bootstrap.Toast(toastLiveExample)
+    toast.show()
 
     const btn1 = document.getElementById("button_01");
     btn1.addEventListener('click', howdy);

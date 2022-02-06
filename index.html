@@ -22,7 +22,6 @@
     <div class="toast-container position-absolute top-0 end-0 p-3">
       <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header">
-          <img src="..." class="rounded me-2" alt="...">
           <strong class="me-auto">New Super Challenges</strong>
           <small>Updated Week 05</small>
           <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
@@ -35,12 +34,21 @@
   </div>
 
   <!--Off Canvas Component-->
-  <button id="offCanvasButton" class="btn btn-outline-primary mx-4 mt-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-    <<< Super Challenges
-  </button>
+  <div id="subHead" class="container-fluid">
+    <div class="row">
+      <div class="col-3">
+        <button id="offCanvasButton" class="btn btn-outline-primary mx-5 my-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+          <<< Super Challenges
+        </button>
+      </div>
+      <div class="col">
+        <h1 class="text-end mx-5 my-4">DIGS — Data Publication</h1>
+      </div>
+    </div>
+  </div>
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      <span></span><button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
       <h3 class="offcanvas-title pb-4" id="offcanvasExampleLabel">Challenges</h3>
@@ -57,12 +65,11 @@
     </div>
   </div>
   <div class="container pt-5">
-    <h1>Miller C. Prosser, PhD</h1>
     <div class="container min-vh-50">
+
       <div class="row mt-5">
         <div class="col-md">
-          <div class="card w-75 h-100">
-            <!-- <img src="..." class="card-img-top" alt="..."> -->
+          <div class="card w-80 h-100">
             <div class="card-body">
               <h5 id="programCard" class="card-title">Digital Studies</h5>
               <p class="card-text">The University of Chicago’s program in Digital Studies of Language, Culture, and History provides a one-year Master of
@@ -74,8 +81,7 @@
           </div>
         </div><!--column-->
         <div class="col-md">
-          <div class="card w-75 h-100">
-            <!-- <img src="..." class="card-img-top" alt="..."> -->
+          <div class="card w-80 h-100">
             <div class="card-body">
               <h5 class="card-title">RSTI</h5>
               <p class="card-text">The Ras Shamra Tablet Inventory presents a catalog of inscribed objects from Ras Shamra-Ugarit. The catalog is based on and updates Bordreuil and Pardee TEO.
@@ -85,8 +91,7 @@
           </div>
         </div><!--column-->
         <div class="col-md">
-          <div class="card w-75 h-100">
-            <!-- <img src="..." class="card-img-top" alt="..."> -->
+          <div class="card w-80 h-100">
             <div class="card-body">
               <h5 class="card-title">Data Publication</h5>
               <p class="card-text">This website was created as part of the DIGS 20005/30005 (Winter 2022) Data Publication for the Humanities. We are working with HTML, CSS, JS, XSLT, and Python for web development in the context of the Humanities.
