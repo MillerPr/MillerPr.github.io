@@ -1,5 +1,5 @@
 h1 {
-  color: white;
+  color: black;
 }
 
 body {
@@ -8,6 +8,10 @@ body {
 
 h1 {
   letter-spacing: 2px;
+}
+
+#splashTitle {
+  color: white;
 }
 
 nav {
