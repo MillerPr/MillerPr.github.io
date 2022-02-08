@@ -3,8 +3,6 @@ Various scripts for digital chalkboard and more.
 Note: event listeners are at the botton of the file.
 */
 
-
-
 //DC functions
 function howdy(){
   var person = prompt("Please enter your name", "YOUR NAME HERE");
@@ -28,7 +26,9 @@ function lastItem() {
 // How does the script know that inputArray is an array?
 // An array comes with many special methods.
 // Note use of template literals with embedded expression—requires backticks `string`.
-function sortItemsInput() {
+
+//Simple Version
+/* function sortItemsInput() {
   var inputArray = [], inputCat = ['fruit', 'animal', 'state', 'country'];
   inputCat.forEach((item) => {
     var newInput = prompt(`enter one ${item}`);
@@ -36,6 +36,29 @@ function sortItemsInput() {
   });
   document.getElementById('outputArray').innerText = `You entered ${inputArray.join(', ')}.
       I sorted them ${inputArray.sort().join(', ')}`;
+}; */
+
+// This version asks the user for how many items to input, and what category they are.
+// This also validates the number.
+function sortItemsInput() {
+  var inputArray = [], inputCat = []
+  var numItems = parseInt(prompt('How many items would you like to enter? 1-4.'));
+  if (isNaN(numItems) || numItems > 4 || numItems < 1 || !(Number.isInteger(numItems))) {
+    alert('Please enter a valid number 1-4.');
+    sortItemsInput();
+  } else {
+   for (let index = 0; index < numItems; index++) {
+     var catInput = prompt(`Which ${numItems} categories would you like to enter?`)
+     inputCat.push(catInput);
+   }
+   inputCat.forEach((item) => {
+     var newInput = prompt(`enter one ${item}`);
+     inputArray.push(newInput);
+   });
+   document.getElementById('outputArray').innerText = `You entered ${inputArray.join(', ')}.
+   I sorted them ${inputArray.sort().join(', ')}`;
+
+  }
 };
 
 // This lays out the logic of the previous function w/o forEach.
@@ -57,11 +80,11 @@ function sortItemsInputManual() {
   console.log(x); //log the the sorted array
   console.log(array); //log the entire array
   outputArray.innerText = "The four items you typed are: " +
-    newFruit + ", " +
-    newAnimal + ", " +
-    newState + ", " +
-    newCountry +
-    ". I lowered all the letters and sorted them alphabetically: " + x.join(', ');
+  newFruit + ", " +
+  newAnimal + ", " +
+  newState + ", " +
+  newCountry +
+  ". I lowered all the letters and sorted them alphabetically: " + x.join(', ');
 }
 
 //Video functions
@@ -78,7 +101,7 @@ function conditional(){
 }
 
 function evalNumber(){
-  var inputValue = parseInt(prompt("Enter any five-digit number without commas"))
+  var inputValue = parseInt(prompt("Enter any five-digit number without commas"));
   if (isNaN(inputValue)||inputValue>99999||inputValue<10000||!(Number.isInteger(inputValue))) {
     alert(inputValue + " is not a valid 5-digit number.")
   } else if (inputValue%2==0){
@@ -95,11 +118,11 @@ function evalNumber(){
 // Falsy action can be another STATEMENT to evaluate with ?.
 // Use this to assign conditional values to variables--very helpful.
 // E.g.
-/* var age = parseInt(prompt("How old are you?"));;
+/* var age = parseInt(prompt("How old are you?"));;;
 var beverage = (age >= 21) ? "Wine" : "Grape Juice";
 console.log(beverage); // "Wine" */
 function evalNumberTernary() {
-  var inputValue = parseInt(prompt("Enter any five-digit integer without commas"));
+  var inputValue = parseInt(prompt("Enter any five-digit integer without commas"));;
   isNaN(inputValue) || inputValue > 99999 || inputValue < 10000 || !(Number.isInteger(inputValue)) ?
   alert(inputValue + " is not a valid 5-digit number.") :
   inputValue % 2 == 0 ?
@@ -296,10 +319,6 @@ function searchMusic(){
   // document.addEventListener('EVENT', FUNCTION, OPTIONS)
 
   document.addEventListener('DOMContentLoaded', () => {
-    // Load the toast
-    var toastLiveExample = document.getElementById('liveToast')
-    var toast = new bootstrap.Toast(toastLiveExample)
-    toast.show()
 
     const btn1 = document.getElementById("button_01");
     btn1.addEventListener('click', howdy);
