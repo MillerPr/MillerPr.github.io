@@ -12,27 +12,77 @@ $warning-cyan: #47b5ff;
 $warning-magenta: #ff3399;
 
 %title {
-  color: $base-color;
+  color: black;
 }
 
 body {
   padding-bottom: 100px;
-
-
 }
 
 h1 {
   @extend %title;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
+}
+
+#splashTitle {
+  color: white;
 }
 
 nav {
   background-color:$base-color;
 }
 
+@media only screen and (min-width: 990px) {
+  #subHead {
+    background: linear-gradient(45deg, white 30%, $secondary-red 30%, $secondary-red 40%);
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  .card {
+    padding-bottom: 20px;
+  }
+  #offCanvasButton {
+    font-size: small;
+  }
+}
+
+/* Toast */
+.toast {
+  background-color: $secondary-yellow;
+}
+
+/* Off Canvas */
+
+.btn-close {
+  align-items: flex-end;
+}
+
+#offCanvasButton {
+  color: $primary-dark;
+  font-weight: 600;
+}
+
+.offcanvas-header {
+  background-color: $secondary-blue;
+}
+
+.offcanvas {
+  background-color: $primary-light;
+}
+
+.offcanvas-title {
+  text-align: center;
+}
+
+/* Cards */
 .cardBtn {
   background-color:$secondary-blue;
   color: white;
+}
+
+.card-body {
+  background-color: $primary-light;
 }
 
 #map {

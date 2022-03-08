@@ -1,0 +1,128 @@
+/*Here is the Google fonts import.*/
+@import url('https://fonts.googleapis.com/css2?family=Shizuru&display=swap');
+
+h1 {
+  color:maroon;
+  /*This is a Google web font, with cursive set as the fallback.*/
+  font-family: 'Shizuru', cursive;
+}
+
+h2 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  padding-top: 30px;
+}
+
+nav {
+  background-color: #800000;
+}
+
+#firstParagraph {
+  color:darkblue;
+  font-family: 'Courier New', Courier, monospace;
+  /*px em vw*/
+  font-size: 16px; /*Sets a specific pixel size.*/
+  /*font-size: 2em; /*Same as px but allows the browser to resize using the menu.*/
+  /*font-size: 2vw; /*Resizes on the fly as the view width changes.*/
+}
+
+/*
+Why doesn't the following selector replace the previous one?
+What comes next in a CSS file should overrule what comes before.
+But here the ID selector takes precedence over the element selector.
+The hierarchy of specificity from more to less is:
+inline style
+id
+class attributes inlcuding pseudo-classes
+element
+*/
+
+p {
+  color:darkgrey;
+}
+
+/*Pseudo element for a drop cap*/
+p.dropcap::first-letter {
+  color: #903;
+  float: left;
+  font-family: Georgia;
+  font-size: 75px;
+  line-height: 60px;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-left: 3px;
+}
+
+p[role='testing'] {
+  color:darkorange;
+}
+
+/*
+The following code comes from an MDN example
+https://github.com/mdn/learning-area/blob/main/html/tables/basic/minimal-table.css
+*/
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(200,200,200);
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+
+td, th {
+  border: 1px solid rgb(190,190,190);
+  padding: 10px 20px;
+}
+
+th {
+  background-color: rgb(235,235,235);
+}
+
+td {
+  text-align: center;
+}
+
+tr:nth-child(even) td {
+  background-color: rgb(250,250,250);
+}
+
+tr:nth-child(odd) td {
+  background-color: rgb(245,245,245);
+}
+
+/*Changing list style.*/
+ul {
+  list-style-type: square;
+}
+
+ol {
+  list-style-type: lower-alpha;
+}
+
+/*change the display of ALL anchor elements to block (dangerous)*/
+a {
+  display: block;
+}
+/*pseudo-classes style aspect of the anchor element*/
+/*You can style the cursor on hover; use sparingly*/
+/* unvisited link */
+a:link {
+  color: maroon;
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: darkgray;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+  text-decoration: underline;
+  cursor:help;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}

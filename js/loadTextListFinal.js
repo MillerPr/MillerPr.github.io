@@ -1,7 +1,11 @@
+document.addEventListener('DOMContentLoaded', () => {
+  window.addEventListener('load', loadXML);
+})
+
 //Define parent element
 var parentElement = document.getElementById('ochreTableBody');
 //Define API url
-var url = "http://ochre.lib.uchicago.edu/ochre?uuid=accd571b-bae3-4d42-93d9-58b65ec79300";
+var url = "https://ochre.lib.uchicago.edu/ochre?uuid=accd571b-bae3-4d42-93d9-58b65ec79300";
 
 //First function, called on <body>
 //Everything else happens in the scope of this function
@@ -20,6 +24,7 @@ function XMLrequest(link){
     if (this.readyState == 4 && this.status == 200) {
       //If all is well with the API call, then format the response
       //with the next chained function.
+      createHeaders(this.responseXML);
       listTexts(this.responseXML);
     }
   };
@@ -27,6 +32,15 @@ function XMLrequest(link){
   connect.send();
   console.log('XMLrequest -- OK');
 
+}
+
+function createHeaders(sourceXML){
+  document.getElementById('projectTitle').innerText = sourceXML.getElementsByTagName('metadata')[0].children[1].innerHTML;
+  document.getElementById('setTitle').innerText = sourceXML.getElementsByTagName('set')[0].children[3].children[0].innerHTML;
+  document.getElementById('setDescription').innerText = sourceXML.getElementsByTagName('set')[0].children[4].innerHTML;
+  var licenseText = document.getElementById('license');
+  licenseText.innerText = sourceXML.getElementsByTagName('availability')[0].children[0].innerHTML;
+  licenseText.setAttribute('href', sourceXML.getElementsByTagName('availability')[0].children[0].attributes[0].nodeValue);
 }
 
 function listTexts(sourceXML){
@@ -50,3 +64,4 @@ function listTexts(sourceXML){
     document.getElementById('row_' + i).appendChild(td2);
   };
 }
+

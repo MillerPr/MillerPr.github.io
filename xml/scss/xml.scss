@@ -1,0 +1,107 @@
+$base-color: #800000;
+$primary-dark: #767676;
+$primary-light: #d6d6ce;
+$secondary-yellow: #ffb547;
+$secondary-orange: #d49464;
+$secondary-red: #b1746f;
+$secondary-lightgreen: #adb17d;
+$secondary-darkgreen: #8a8b79;
+$secondary-blue: #5b8fa8;
+$secondary-violet: #725663;
+$warning-cyan: #47b5ff;
+$warning-magenta: #ff3399;
+
+body {
+  padding-bottom: 200px;
+}
+
+
+h1, #projectName {
+  color: $base-color;
+}
+
+h4 {
+  padding-top: 5px;
+}
+
+#splashTitle {
+  color: white;
+  font-size: 150%;
+}
+
+#globalNodes {
+  padding-top: 10px;
+}
+
+@media only screen and (min-width: 990px) {
+  #subHead {
+    background: linear-gradient(45deg, white 20%, $base-color 20%, $base-color 40%);
+  }
+}
+
+a {
+  text-decoration: none;
+  display: block;
+  color: $base-color;
+}
+
+.identificationXsl {
+  font-size: 150%;
+}
+
+.globalHeading {
+  font-size: 125%;
+  font-weight: 500;
+}
+
+.propertyVariable {
+  color: $primary-dark;
+}
+
+.propertyValue {
+  font-weight:600;
+}
+
+footer a {
+  color:#5b8fa8;
+}
+
+th {
+  text-align: left;
+}
+
+#imageHeading, #imageCell {
+  text-align: center;
+}
+
+.img-thumbnail {
+  max-height: 80px;
+}
+
+ul {
+  list-style: none;
+  margin-top: 1%;
+  margin-bottom: 2%;
+}
+
+li {
+  line-height: normal;
+  margin-top: 1.5%;
+}
+
+#map {
+  float: right;
+  margin: 0 0 10px 10px;
+  height: 50vh;
+  width: 100%;
+  border: solid;
+  border-width: 2px;
+  border-color: $primary-light;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  background-color: #d6d6ce;
+}
+

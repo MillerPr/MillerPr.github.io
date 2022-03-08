@@ -354,3 +354,15 @@ function searchMusic(){
       alert('A nested function has access to variables in the parent function: 2 + 1 = ' + parentFunction());
     })
   })
+
+
+function jose(){
+  var array = [];
+  var number = prompt("enter a number")
+  array.push(number)
+  array.sort
+  for (i=0; i < array.length; i++){
+    console.log(array[i]);
+  }
+
+}

@@ -1,0 +1,34 @@
+/* CSS generated from SCSS flavor of Sass */
+h1 {
+  color: #800000;
+}
+
+h1 {
+  letter-spacing: 3px;
+}
+
+nav {
+  background-color: #800000;
+}
+
+.cardBtn {
+  background-color: #5b8fa8;
+  color: white;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+}
+
+img {
+  max-width: 150px;
+  height: 62.5%;
+}
+
+/*# sourceMappingURL=sass.css.map */
