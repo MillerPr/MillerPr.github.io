@@ -23,7 +23,7 @@
                 <!--CREATE VARIABLES AND PARAMS TO BE USED BY A MAP API.-->
                 <!-- If there are coordinates, make a map -->
                 <xsl:if test="//coordinates">
-                    <!--THESE VARIABLES AND PARAMS ARE USED BY THE GOOGLE MAPS JS-->
+                    <!--THESE VARIABLES AND PARAMS ARE USED BY THE MAP JS-->
                     <xsl:variable name="lat" select="number(//coordinates/@latitude)"/>
                     <xsl:variable name="lng" select="number(//coordinates/@longitude)"/>
                     <xsl:variable name="itemName" select="string(//ochre/spatialUnit/identification/label)"/>

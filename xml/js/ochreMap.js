@@ -1,3 +1,5 @@
+
+
 var itemTitle = {
     itemName: String(document.getElementById("itemName").value)
 };
