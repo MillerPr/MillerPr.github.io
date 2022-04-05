@@ -23,38 +23,35 @@
           <a class="dropdown-item" href="DC_wk03-01a.html">Week 03</a>
           <a class="dropdown-item" href="DC_wk04-01a.html">Week 04</a>
           <a class="dropdown-item" href="DC_wk05-01a.html">Week 05</a>
-          <a class="dropdown-item disabled" href="DC_wk06-01a.html">Week 06</a>
-          <a class="dropdown-item disabled" href="DC_wk07-01a.html">Week 07</a>
+          <a class="dropdown-item" href="DC_wk06-01a.html">Week 06</a>
         </div>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown_03" role="button" data-bs-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Other
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="howler.html">Howler</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown_02" role="button" data-bs-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
-        Research
+        Other
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="http://ochre.lib.uchicago.edu/RSTI/">Ras Shamra</a>
-        <a class="dropdown-item" href="https://voices.uchicago.edu/cedar/">CEDAR</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item"
-        href="https://oi.uchicago.edu/research/projects/persepolis-fortification-archive">Persepolis</a>
-      </div>
-    </li>
-  </ul>
-</div>
-<script>
-  var pathname = window.location.pathname;
-  var cleanPath = pathname.substring(pathname.lastIndexOf('/') + 1);
-  $('[href*="' + cleanPath + '"]').addClass('active');
-</script>
+        <a class="dropdown-item" href="howler.html">Howler</a>
+        <a class="dropdown-item" href="music.html">MusicBrainzAPI</a>
+        <a class="dropdown-item" href="rstiTextsEval.html">Evaluate method</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown_02" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Research</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="http://ochre.lib.uchicago.edu/RSTI/">Ras Shamra</a>
+          <a class="dropdown-item" href="https://voices.uchicago.edu/cedar/">CEDAR</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item"
+          href="https://oi.uchicago.edu/research/projects/persepolis-fortification-archive">Persepolis</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <script>
+    var pathname = window.location.pathname;
+    var cleanPath = pathname.substring(pathname.lastIndexOf('/') + 1);
+    $('[href*="' + cleanPath + '"]').addClass('active');
+  </script>
 </div>
 </nav>

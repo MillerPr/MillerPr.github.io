@@ -48,7 +48,7 @@ function sortItemsInput() {
     sortItemsInput();
   } else {
    for (let index = 0; index < numItems; index++) {
-     var catInput = prompt(`Which ${numItems} categories would you like to enter?`)
+    var catInput = prompt(`Which ${numItems} categories would you like to enter?`)
      inputCat.push(catInput);
    }
    inputCat.forEach((item) => {
@@ -57,7 +57,6 @@ function sortItemsInput() {
    });
    document.getElementById('outputArray').innerText = `You entered ${inputArray.join(', ')}.
    I sorted them ${inputArray.sort().join(', ')}`;
-
   }
 };
 
@@ -323,6 +322,9 @@ function searchMusic(){
     const btn1 = document.getElementById("button_01");
     btn1.addEventListener('click', howdy);
 
+    // Alternate shorter method
+    // document.getElementById("button_01").addEventListener('click', howdy);
+
     const btn2 = document.querySelector('#button_02');
     btn2.addEventListener('click', lastItem);
 
@@ -352,3 +354,15 @@ function searchMusic(){
       alert('A nested function has access to variables in the parent function: 2 + 1 = ' + parentFunction());
     })
   })
+
+
+function jose(){
+  var array = [];
+  var number = prompt("enter a number")
+  array.push(number)
+  array.sort
+  for (i=0; i < array.length; i++){
+    console.log(array[i]);
+  }
+
+}

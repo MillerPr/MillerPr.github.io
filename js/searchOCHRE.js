@@ -3,6 +3,7 @@ function searchProject() {
   var searchTerm = document.getElementById('searchProject').value;
   var url = "https://ochre.lib.uchicago.edu/ochre?&xquery=for%20$q%20in%20input()/ochre[@uuidBelongsTo=%2746ccab46-9c3f-4448-8476-2bf18236791e%27]/* where $q[identification/label[matches(text(),'" + searchTerm + "', 'i')]] return <results><item>{$q/@uuid}%20{$q/identification/label}%20{$q/description}</item></results>";
 
+
   //var url = "http://ochre.lib.uchicago.edu/ochre?&xquery=for%20$q%20in%20input()/ochre[@uuidBelongsTo=%2746ccab46-9c3f-4448-8476-2bf18236791e%27]/*%20return%20<results>{for%20$s%20in%20$q[identification/label[matches(text(),'" + searchTerm + "', 'i')]]%20return%20%3Citem%3E%20{$s/@uuid}%20{$s/identification/label}%20{$s/description}%3C/item%3E}</results>";
   //var url = "https://ochre.lib.uchicago.edu/ochre?&xquery=for%20$q%20in%20input()/ochre[@belongsTo=%27RSTI%27]/*%20return%20for%20$s%20in%20$q[identification/label[matches(text(),'" + searchTerm + "', 'i')]]%20return%20%3Citem%3E%20{$s/@uuid}%20{$s/identification/label}%20{$s/description}%3C/item%3E";
   //var url = "https://ochre.lib.uchicago.edu/ochre?&xquery=for%20$q%20in%20input()/ochre[@uuid='ca126815-a753-4794-9277-cbb100942cc8']/set/items%20return%20<results>%20{%20for%20$s%20in%20$q/spatialUnit[description[matches(text(),'" + searchTerm + "', 'i')]]%20return%20<item>%20{$s/@uuid}%20{$s/identification/label}%20{$s/description}</item>%20}%20</results>"

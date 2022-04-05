@@ -1,0 +1,83 @@
+body {
+  padding-bottom: 200px;
+}
+
+h1, #projectName {
+  color: #800000;
+}
+
+h4 {
+  padding-top: 5px;
+}
+
+#splashTitle {
+  color: white;
+}
+
+#globalNodes {
+  padding-top: 10px;
+}
+
+@media only screen and (min-width: 990px) {
+  #subHead {
+    background: linear-gradient(45deg, white 20%, #800000 20%, #800000 40%);
+  }
+}
+a {
+  text-decoration: none;
+  display: block;
+  color: #800000;
+}
+
+.propertyVariable {
+  color: #767676;
+}
+
+.propertyValue {
+  font-weight: 600;
+}
+
+footer a {
+  color: #5b8fa8;
+}
+
+th {
+  text-align: left;
+}
+
+#imageHeading, #imageCell {
+  text-align: center;
+}
+
+.img-thumbnail {
+  max-height: 80px;
+}
+
+ul {
+  list-style: none;
+  margin-top: 1%;
+  margin-bottom: 2%;
+}
+
+li {
+  line-height: normal;
+  margin-top: 1.5%;
+}
+
+#map {
+  float: right;
+  margin: 0 0 10px 10px;
+  height: 50vh;
+  width: 100%;
+  border: solid;
+  border-width: 2px;
+  border-color: #d6d6ce;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  background-color: #d6d6ce;
+}
+
+/*# sourceMappingURL=xml.css.map */

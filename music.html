@@ -21,22 +21,33 @@
   <div id="nav-placeholder"></div>
   <div class="container mt-3">
     <div id="title">Music API Example</div>
-    <form>
+    <form id="musicForm" onsubmit="event.preventDefault()">
       <div class="row">
         <div class="col">
           <input id="artistInput" type="text" class="form-control" placeholder="Artist name">
         </div>
       </div>
     </form>
-    <button type="submit" class="btn btn-primary my-3" onclick="searchMusic()">Search</button>
-    <div class="container" id="discography">
+    <button id="musicButton" type="submit" class="btn btn-primary my-3">Search</button>
+    <div class="container" id="output"></div>
+    <div class="container d-none" id="tableContainer">
+      <h2 id="artistName"></h2>
+      <table id="tableOutput" class="table">
+        <thead>
+          <tr>
+            <th>Release date</th>
+            <th>Title</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+      </table>
     </div>
   </div>
   <footer id="footerPlaceholder" class="d-none d-md-block footer container-fluid mt-auto py-3 bg-light"></footer>
 
-  <script src="js/musicBrainz.js"></script>
-  <script src="js/nav.js"></script>
+  <script src="js/musicBrainzManual.js"></script>
+  <script src="js/nav_dc.js"></script>
   <script src="js/footer.js"></script>
 </body>
-
 </html>
