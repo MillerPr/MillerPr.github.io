@@ -7,18 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
 
   <title>XQuery Test</title>
 </head>
 
 <body>
   <div class="container mt-3">
-    <h1>OCHRE String Search</h1>
-    <h5>This is a proof-of-concept to demonstrate string searching using the OCHRE API</h5>
+    <h1>OCHRE XQuery</h1>
+    <h5>This is a proof-of-concept to demonstrate xquery searching using the OCHRE API</h5>
+    <hr>
     <h5>The API is configured to perform a case-insensitive search in one Set in the LCEIC project</h5>
-    <hr />
     <h5>Search items by name</h5>
     <div>Input string search</div>
     <!-- User input field, requires preventDefault function to stop refresh -->
@@ -26,7 +27,7 @@
       <div class="row">
         <div class="col">
           <input id="searchTerm" name="inputTerm" style="width:60vw" type="text" class="form-control"
-            placeholder="Try searching for GR...">
+          placeholder="Try searching for GR...">
         </div>
       </div>
     </form>
@@ -41,14 +42,14 @@
       <div class="row">
         <div class="col">
           <input id="searchDesc" name="inputTerm" style="width:60vw" type="text" class="form-control"
-            placeholder="Try searching for coin...">
+          placeholder="Try searching for coin...">
         </div>
       </div>
     </form>
     <button id="xqueryButton_02" type="submit" class="btn btn-primary my-3"
-      onclick="searchDescription()">Submit</button>
+    onclick="searchDescription()">Submit</button>
   </div>
-
+  <hr>
   <div class="container mt-3">
     <h5>Search resources by name from the Tiwanaku project</h5>
     <div>Input string search</div>
@@ -57,13 +58,13 @@
       <div class="row">
         <div class="col">
           <input id="searchResDesc" name="inputTerm" style="width:60vw" type="text" class="form-control"
-            placeholder="Try searching for N2636-E2948...">
+          placeholder="Try searching for N2636-E2948...">
         </div>
       </div>
     </form>
     <button id="xqueryButton_04" type="submit" class="btn btn-primary my-3" onclick="searchResource()">Submit</button>
   </div>
-
+  <hr>
   <div class="container mt-3">
     <h5>Search all items from RSTI, by name</h5>
     <div>Input string search using Regular Expression</div>
@@ -72,30 +73,51 @@
       <div class="row">
         <div class="col">
           <input id="searchProject" name="inputTerm" style="width:60vw" type="text" class="form-control"
-            placeholder="Try searching for RS 7 or RS 7\.">
+          placeholder="Try searching for RS 7 or RS 7\.">
         </div>
       </div>
     </form>
     <button id="xqueryButton_03" type="submit" class="btn btn-primary my-3" onclick="searchProject()">Submit</button>
   </div>
+  <hr>
+  <div class="container mt-3">
+    <h5>Choose project and category — close but not working yet.</h5>
 
-  <div id="xqueryOutput" class="container">
+    <!-- User input field, requires preventDefault function to stop refresh -->
+    <form id="wikiForm_05" onsubmit="searchDynamic(); event.preventDefault()">
+      <div class="row">
+        <div class="col-2">
+          <select id="selectProject" class="form-select form-select-md mb-3" aria-label="Default select example">
+            <option value="" selected>Project</option>
+            <option value="46ccab46-9c3f-4448-8476-2bf18236791e">RSTI</option>
+            <option value="4724cad8-1b09-4373-aca7-51a4dc5e2255">Tiwanaku</option>
+            <option value="a9b933c2-7609-4aab-ae01-3af831e290ab">Idalion</option>
+          </select>
+        </div>
+        <div class="col-2">
+          <select id="selectCategory" class="form-select form-select-md mb-3" aria-label="Default select example">
+            <option value="" selected>Category</option>
+            <option value="spatialUnit">Locations & objects</option>
+            <option value="resource">Resources</option>
+            <option value="text">Texts</option>
+          </select>
+        </div>
+        <div class="col-6">
+          <input id="searchDynamic" name="inputTerm" style="width:20vw" type="text" class="form-control"
+          placeholder="Enter search here (regex accepted)">
+        </div>
+      </div>
+    </form>
+    <button id="xqueryButton_05" type="submit" class="btn btn-primary my-3" onclick="searchDynamic()">Submit</button>
 
-
+    <div id="xqueryOutput" class="container"></div>
+    <pre id="output" class="container"></pre>
   </div>
-  <pre id="output" class="container"></pre>
-
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
   <script src="js/searchOCHRE.js"></script>
 
 </body>

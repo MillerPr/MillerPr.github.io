@@ -42,6 +42,7 @@ function createXquery() {
   //var url = "http://ochre.lib.uchicago.edu/ochre?&xquery=for%20$q%20in%20input()/ochre[@uuid=%27fa3dd2d3-5e91-48de-9989-0ce3f8e18a1c%27]%20return%20<results>{$q//spatialUnit[contains(text(),'" + searchTerm + "')]}</results>";
   //complex url
   var url = "https://ochre.lib.uchicago.edu/ochre?&xquery=for%20$q%20in%20input()/ochre[@uuid='ca126815-a753-4794-9277-cbb100942cc8']/set/items%20return%20<results>%20{%20for%20$s%20in%20$q/spatialUnit[identification/label[matches(text(),'" + searchTerm + "', 'i')]]%20return%20<item>%20{$s/@uuid}%20{$s/identification/label}%20{$s/description}</item>%20}%20</results>"
+  console.log(url);
   return fetch(url)
   .then(response => response.text())
   .then(data =>{
@@ -69,6 +70,32 @@ function searchResource() {
   })
   .catch(error => document.getElementById('xqueryOutput').innerHTML="No results found");
 };
+
+//This is close. The fetch doesn't like the URL for some reason. Tried with contains and match.
+function searchDynamic(){
+  document.getElementById('xqueryOutput').innerHTML = "";
+  var e = document.getElementById("selectProject");
+	var project = e.value; // UUID
+  var f = document.getElementById("selectCategory");
+	var category = f.value; // Category
+  var searchTerm = document.getElementById('searchDynamic').value;
+  var url = "https://ochre.lib.uchicago.edu/ochre?xquery=for%20$q%20in%20input()/ochre[@uuidBelongsTo='"+project+"']/"+category+"%20where%20$q[identification/label[contains(text(),'" + searchTerm + "')]]%20return%20%3Cresults%3E%3Citem%3E{$q/@uuid}%20{$q/identification/label}%20{$q/description}%3C/item%3E%3C/results%3E";
+  console.log(url);
+  //var url = 'https://ochre.lib.uchicago.edu/ochre?xquery=for%20$q%20in%20input()/ochre[@uuidBelongsTo=%2746ccab46-9c3f-4448-8476-2bf18236791e%27]/spatialUnit%20where%20$q[identification/label[matches(text(),%27Soukas%27,%20%27i%27)]]%20return%20%3Cresults%3E%3Citem%3E{$q/@uuid}%20{$q/identification/label}%20{$q/description}%3C/item%3E%3C/results%3E'
+  return fetch(url)
+  .then(response => response.text())
+  .then(data =>{
+    console.log(data); //string
+    //document.getElementById('output').textContent = data;
+    let parser = new DOMParser();
+    let xml = parser.parseFromString(data, "application/xml");
+    listResults_03(xml);
+  })
+  .catch(error => document.getElementById('xqueryOutput').innerHTML="No results found");
+};
+
+
+
 
 
 //This function establishes a simple baseline
