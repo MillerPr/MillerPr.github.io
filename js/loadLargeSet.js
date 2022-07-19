@@ -1,5 +1,5 @@
 //This is an attempt to test the loading speed of a large data set
-//Ultimatey, though, this is not an extensible strategy.
+//Ultimately, though, this is not an extensible strategy.
 
 //full UUID 83739c7a-b4ce-47c7-b723-b5ccc7da71a2
 //sample UUID accd571b-bae3-4d42-93d9-58b65ec79300

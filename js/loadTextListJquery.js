@@ -1,12 +1,32 @@
-document.addEventListener('DOMContentLoaded', () => {
+$(document).ready(loadXML);
+var parentElement = $('#ochreTableBody');
+
+$.ajax({
+  method: "GET",
+  url: "https://ochre.lib.uchicago.edu/ochre?uuid=accd571b-bae3-4d42-93d9-58b65ec79300",
+  data: "xml",
+  statusCode: {
+    404: function(){
+      console.log('XML Load -- Fail 404');
+    },
+    200: function(){
+      console.log('XML Load -- OK');
+    }
+  }
+  .done(function(responseXML){
+    createHeaders(responseXML);
+    listTexts(responseXML);
+  })
+});
+
+/* document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', loadXML);
-})
+}) */
+
 
 //Define parent element
-var parentElement = document.getElementById('ochreTableBody');
 //Define API url
 var url = "https://ochre.lib.uchicago.edu/ochre?uuid=accd571b-bae3-4d42-93d9-58b65ec79300";
-
 
 //First function, called on <body>
 //Everything else happens in the scope of this function
