@@ -2,76 +2,49 @@
 <html lang="en">
 <head>
   <!-- Required meta tags -->
-  <meta charset="ut`-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" type="image/jpg" href="https://ochre.lib.uchicago.edu/resources/OCHRE_tree_nocolor.png" />
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/millerpr.css">
-  <script src="js/digsIndex.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/millerpr.css">
   <title>MCP DIGS</title>
 </head>
 
 <body>
-  <!--Load nav here-->
-  <div id="nav-placeholder"></div>
-  <!--Toast Component-->
-  <div aria-live="polite" aria-atomic="true" class="position-relative">
-    <div class="toast-container position-absolute top-0 end-0 p-3">
-      <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-          <strong class="me-auto">New Super Challenges</strong>
-          <small>Updated Week 07</small>
-          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-        <div class="toast-body">
-          Click the <<< Super Challenges button to see a growing list of fun challenges!
-        </div>
-      </div>
-    </div>
-  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark container-fluid">
+    <a class="navbar-brand" href="#">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <!--Off Canvas Component-->
-  <div id="subHead" class="container-fluid">
-    <div class="row">
-      <div class="col">
-        <button id="offCanvasButton" class="btn btn-outline-primary mx-4 my-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-          <<< Super Challenges
-        </button>
-      </div>
-      <div class="col d-none d-md-block">
-        <h2 id="splashTitle" class="text-end mx-5 my-4">DIGS — Data Publication</h2>
-      </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="https://digitalstudies.uchicago.edu/">Digital Studies</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Research
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="http://ochre.lib.uchicago.edu/RSTI/">Ras Shamra</a>
+            <a class="dropdown-item" href="https://voices.uchicago.edu/cedar/">CEDAR</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://oi.uchicago.edu/research/projects/persepolis-fortification-archive">Persepolis</a>
+          </div>
+        </li>
+      </ul>
     </div>
-  </div>
-  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-    <div class="offcanvas-header">
-      <span></span><button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      <h3 class="offcanvas-title pb-4" id="offcanvasExampleLabel">Challenges</h3>
-      <div class="h5">
-        Here are some challenges above and beyond the homework and digital chalkboard tasks.
-      </div>
-      <ol>
-        <li>Create a nav bar that can be loaded on all of your pages. You should create the nav once as a separate html file, then use a script to add this chunk of html to a placeholder on every other page.</li>
-        <li>Convert all of your events to use event listeners. Your html pages should have no event attributes such as onclick.</li>
-        <li>Wikipedia API: create anchor links to Wikipedia as results. Use the pageid property from the JSON file. The base URL for loading Wikipedia pages by pageid is the following: https://en.wikipedia.org/?curid= Add the pageid to the end of the URL.</li>
-        <li>Try the MusicBrainzAPI using both JSON and XML approaches.</li>
-      </ol>
-      <div class="h5">
-        Take the challenge!
-      </div>
-    </div>
-  </div>
+  </nav>
   <div class="container pt-5">
+    <h1>Miller C. Prosser, PhD</h1>
     <div class="container min-vh-50">
-      <h2 class="d-lg-none">DIGS — Data Publication</h2>
       <div class="row mt-5">
         <div class="col-md">
-          <div class="card w-80 h-100">
+          <div class="card w-75 h-100">
+            <!-- <img src="..." class="card-img-top" alt="..."> -->
             <div class="card-body">
               <h5 id="programCard" class="card-title">Digital Studies</h5>
               <p class="card-text">The University of Chicago’s program in Digital Studies of Language, Culture, and History provides a one-year Master of
@@ -83,42 +56,37 @@
           </div>
         </div><!--column-->
         <div class="col-md">
-          <div class="card w-80 h-100">
+          <div class="card w-75 h-100">
+            <!-- <img src="..." class="card-img-top" alt="..."> -->
             <div class="card-body">
               <h5 class="card-title">RSTI</h5>
               <p class="card-text">The Ras Shamra Tablet Inventory presents a catalog of inscribed objects from Ras Shamra-Ugarit. The catalog is based on and updates Bordreuil and Pardee TEO.
               </p>
             </div>
-            <a href="https://ochre.lib.uchicago.edu/RSTI/" class="btn cardBtn">RSTI</a>
+            <a href="http://ochre.lib.uchicago.edu/RSTI/" class="btn cardBtn">RSTI</a>
           </div>
         </div><!--column-->
         <div class="col-md">
-          <div class="card w-80 h-100">
+          <div class="card w-75 h-100">
+            <!-- <img src="..." class="card-img-top" alt="..."> -->
             <div class="card-body">
               <h5 class="card-title">Data Publication</h5>
-              <p class="card-text">This website was created as part of the DIGS 20005/30005 (Winter 2022) Data Publication for the Humanities. We are working with HTML, CSS, JS, XSLT, and Python for web development in the context of the Humanities.
+              <p class="card-text">This website was created as part of the DIGS 20005/30005 (Winter 2021) Data Publication for the Humanities. We are working with HTML, CSS, JS, XSLT, and Python for web development in the context of the Humanities.
               </p>
             </div>
-            <a href="https://canvas.uchicago.edu" class="btn cardBtn">DIGS Canvas</a>
+            <a href="canvas.uchicago.edu" class="btn cardBtn">DIGS Canvas</a>
           </div>
         </div><!--column-->
       </div><!--row-->
     </div><!--internal container-->
-    <div class="container mt-5">
-      <!--<div id="buttonGroup" class="h3">Sample JS</div>-->
-
-
-    </div>
   </div><!--container-->
-  <footer id="footerPlaceholder" class="d-none d-md-block footer container-fluid mt-auto py-3 bg-light"></footer>
 
   <!-- Optional JavaScript; choose one of the two! -->
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  <script src="js/nav_dc.js"></script>
-  <script src="js/footer.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+  crossorigin="anonymous"></script>
 
   <!-- Option 2: Separate Popper and Bootstrap JS -->
   <!--
