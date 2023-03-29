@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/DC_wk02-01.css">
+  <!--Load web fonts from Google using the following or @import via CSS-->
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shizuru&display=swap" rel="stylesheet"> -->
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <title>Digital Chalkboard—Week 02 Results</title>
+  </head>
+  <body>
+    <div id="nav-placeholder"></div>
+    <div class="container">
+      <h1>Digital Chalkboard Week 02</h1>
+      <!--Can you add the paragraph and id using an emmet abbreviation?-->
+      <h2>First Paragraph</h2>
+      <p class="dropcap" id="firstParagraph">Nunc sed augue lacus viverra vitae congue eu consequat ac felis donec et odio pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque</p>
+      <h2>Second Paragraph</h2>
+      <p class="dropcap" id="secondParagraph">Suspendisse potenti nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus est pellentesque</p>
+      <h2>Third Paragraph</h2>
+      <!--Why doesn't the third paragraph have a drop cap?-->
+      <p id="thirdParagraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nibh mauris cursus mattis molestie a iaculis at erat pellentesque. Ac ut consequat semper viverra nam libero justo. Quam vulputate dignissim suspendisse in est ante in nibh mauris. Maecenas volutpat blandit aliquam etiam erat velit. Risus ultricies tristique nulla aliquet enim tortor at auctor urna. Mauris commodo quis imperdiet massa tincidunt nunc pulvinar. At erat pellentesque adipiscing commodo elit at imperdiet dui. Interdum velit euismod in pellentesque massa placerat duis. Vel eros donec ac odio tempor. Enim ut sem viverra aliquet eget sit. Nunc consequat interdum varius sit amet mattis vulputate. Praesent tristique magna sit amet purus gravida quis blandit. Pretium nibh ipsum consequat nisl vel pretium lectus. Pellentesque eu tincidunt tortor aliquam nulla facilisi cras.
+      </p>
+      <h2>Fourth Paragraph</h2>
+      <p id="fourthParagraph">Fourth paragraph goes here.</p>
+      <!--
+        This template is the bs5-table-default snippet.
+        The thead and tbody elements are optional.
+      -->
+      <h2>Tables</h2>
+      <h3>Requires CSS to style</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>City</th>
+            <th>State</th>
+            <th>ZIP</th>
+          </tr>
+        </thead>
+        <tbody id="tBody">
+          <tr>
+            <td scope="row">Chicago</td>
+            <td>IL</td>
+            <td>60637</td>
+          </tr>
+          <tr>
+            <td scope="row">Minneapolis</td>
+            <td>MN</td>
+            <td>55410</td>
+          </tr>
+        </tbody>
+      </table>
+      <!--Lists-->
+      <h2>Lists</h2>
+      <ul>
+        <li>January</li>
+        <li>February</li>
+        <li>March</li>
+      </ul>
+      <ol style="list-style:lower-greek">
+        <li>January</li>
+        <li>February</li>
+        <li>March</li>
+      </ol>
+      <p>See CSS list-style property.</p>
+      <!--
+        Anchor links are inline elements.
+        href=URL, tel, email, #id
+        Strong link text for accessibility; i.e. don't say click here.
+        Size and Proximity are also important for accessibility.
+        Anchor vs. Button: anchor should not launch events/scripts.
+        Give the user a hint as to what will happen: new tab, file type.
+        Style links with CSS.
+      -->
+      <h2>Links</h2>
+      <a href="https://en.wikipedia.org/" target="_blank">wikipedia (opens in new tab)</a>
+      <a href="" download="https://ochre.lib.uchicago.edu/resources/OCHRE_tree_nocolor.png">Download Tree Icon (png file)</a>
+      <h2>Character Entities</h2>
+      <div>
+        <p>How do we display special characters like angled brackets?</p>
+        <p>Special characters are entered as entities by name or number.</p>
+        <p>&lt;html&gt;</p>
+        <p>Use &# for decimal number.</p>
+        <p>Use &#x for hexidecimal number.</p>
+        <p>Less than sign: name is lt, decimal is 60, hex is 3C.</p>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="js/nav_dc.js"></script>
+  </body>
+  </html>

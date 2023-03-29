@@ -1,6 +1,10 @@
 /*Here is the Google fonts import.*/
 @import url('https://fonts.googleapis.com/css2?family=Shizuru&display=swap');
 
+body {
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
 h1 {
   color:maroon;
   /*This is a Google web font, with cursive set as the fallback.*/
@@ -36,8 +40,8 @@ class attributes inlcuding pseudo-classes
 element
 */
 
-p {
-  color:darkgrey;
+p:nth-child(-n+4) {
+  color:deeppink;
 }
 
 /*Pseudo element for a drop cap*/
