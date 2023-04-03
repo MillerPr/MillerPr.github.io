@@ -11,7 +11,7 @@ $secondary-violet: #725663;
 $warning-cyan: #47b5ff;
 $warning-magenta: #ff3399;
 
-%title {
+@mixin title{
   color: black;
 }
 
@@ -20,7 +20,7 @@ body {
 }
 
 h1 {
-  @extend %title;
+  @include title;
   letter-spacing: 2px;
 }
 

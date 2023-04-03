@@ -1,14 +1,16 @@
 /*Here is the Google fonts import.*/
-@import url('https://fonts.googleapis.com/css2?family=Shizuru&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+
+h1 {
+  color:maroon;
+  /*This is a Google web font, with cursive set as the fallback.*/
+  font-family: 'Carter One', cursive;
+}
 
 body {
   padding-top: 50px;
   padding-bottom: 100px;
-}
-h1 {
-  color:maroon;
-  /*This is a Google web font, with cursive set as the fallback.*/
-  font-family: 'Shizuru', cursive;
 }
 
 h2 {

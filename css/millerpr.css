@@ -1,12 +1,9 @@
-h1 {
-  color: black;
-}
-
 body {
   padding-bottom: 100px;
 }
 
 h1 {
+  color: black;
   letter-spacing: 2px;
 }
 
@@ -27,7 +24,6 @@ nav {
   .card {
     padding-bottom: 20px;
   }
-
   #offCanvasButton {
     font-size: small;
   }
