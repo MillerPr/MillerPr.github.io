@@ -99,6 +99,7 @@ function conditional(){
   }
 }
 
+
 function evalNumber(){
   var inputValue = parseInt(prompt("Enter any five-digit number without commas"));
   if (isNaN(inputValue)||inputValue>99999||inputValue<10000||!(Number.isInteger(inputValue))) {
