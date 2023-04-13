@@ -1,9 +1,12 @@
 body {
-  padding-bottom: 100px;
+  padding-bottom: 90px;
 }
 
 h1 {
   color: black;
+}
+
+h1 {
   letter-spacing: 2px;
 }
 
@@ -23,6 +26,7 @@ nav {
 @media only screen and (max-width: 990px) {
   .card {
     padding-bottom: 20px;
+    text-align: justify;
   }
   #offCanvasButton {
     font-size: small;

@@ -1,26 +1,22 @@
-$base-color: #800000;
-$primary-dark: #767676;
-$primary-light: #d6d6ce;
-$secondary-yellow: #ffb547;
-$secondary-orange: #d49464;
-$secondary-red: #b1746f;
-$secondary-lightgreen: #adb17d;
-$secondary-darkgreen: #8a8b79;
-$secondary-blue: #5b8fa8;
-$secondary-violet: #725663;
-$warning-cyan: #47b5ff;
-$warning-magenta: #ff3399;
+// @use a custom module (similar to @layer in vanilla CSS)
+// notice module has _name
+// @use excludes underscore and extension.
+@use 'UCIdentity' as uc;
 
 @mixin title{
   color: black;
 }
 
 body {
-  padding-bottom: 100px;
+  padding-bottom: 90px;
+}
+
+%headings {
+  @include title;
 }
 
 h1 {
-  @include title;
+  @extend %headings;
   letter-spacing: 2px;
 }
 
@@ -29,18 +25,19 @@ h1 {
 }
 
 nav {
-  background-color:$base-color;
+  background-color:uc.$base-color;
 }
 
 @media only screen and (min-width: 990px) {
   #subHead {
-    background: linear-gradient(45deg, white 30%, $secondary-red 30%, $secondary-red 40%);
+    background: linear-gradient(45deg, white 30%, uc.$secondary-red 30%, uc.$secondary-red 40%);
   }
 }
 
 @media only screen and (max-width: 990px) {
   .card {
     padding-bottom: 20px;
+    text-align: justify;
   }
   #offCanvasButton {
     font-size: small;
@@ -49,26 +46,25 @@ nav {
 
 /* Toast */
 .toast {
-  background-color: $secondary-yellow;
+  background-color: uc.$secondary-yellow;
 }
 
 /* Off Canvas */
-
 .btn-close {
   align-items: flex-end;
 }
 
 #offCanvasButton {
-  color: $primary-dark;
+  color: uc.$primary-dark;
   font-weight: 600;
 }
 
 .offcanvas-header {
-  background-color: $secondary-blue;
+  background-color: uc.$secondary-blue;
 }
 
 .offcanvas {
-  background-color: $primary-light;
+  background-color: uc.$primary-light;
 }
 
 .offcanvas-title {
@@ -77,12 +73,12 @@ nav {
 
 /* Cards */
 .cardBtn {
-  background-color:$secondary-blue;
+  background-color: uc.$secondary-blue;
   color: white;
 }
 
 .card-body {
-  background-color: $primary-light;
+  background-color: uc.$primary-light;
 }
 
 #map {
@@ -98,7 +94,3 @@ footer {
 img {
   max-width: 150px;
 }
-
-
-
-

@@ -1,0 +1,22 @@
+html {
+  background-color: rgb(73, 94, 81);
+}
+
+body {
+  color: bisque;
+
+}
+
+p, li, div, span, a:link, a:visited {
+  font-family: 'VT323', monospace;
+  font-size:xx-large;
+  color: greenyellow;
+  text-decoration: none;
+}
+
+a:hover {
+  color: blueviolet;
+}
+
+
+

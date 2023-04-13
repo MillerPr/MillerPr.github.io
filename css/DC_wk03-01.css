@@ -1,0 +1,37 @@
+h1 {
+  color: #800000;
+  letter-spacing: 3px;
+}
+
+nav {
+  background-color: #800000;
+}
+
+/*Subtle background color*/
+#columnContainer {
+  background-color: #d2d6a1;
+}
+
+/*Create a drop cap on the first letter
+but only when the screen is larger than 990px.*/
+@media only screen and (min-width: 990px) {
+  .col-lg::first-letter {
+    color: #800000;
+    float: left;
+    font-family: Georgia;
+    font-size: 75px;
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+  }
+}
+/*Change the text justification to justify only when a
+screen is smaller than the pixel measurement
+https://developer.mozilla.org/en-us/docs/Web/CSS/@media */
+@media only screen and (max-width: 990px) {
+  .col-lg {
+    text-align: justify;
+  }
+}
+
