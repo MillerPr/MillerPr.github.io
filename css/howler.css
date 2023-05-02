@@ -1,7 +1,3 @@
-.h1 {
-  color: black;
-}
-
 body {
   padding-bottom: 100px;
   background-color: #d6d6ce;
@@ -15,13 +11,6 @@ body {
 
 nav {
   background-color: #800000;
-}
-
-.h1 {
-  letter-spacing: 2px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 img {

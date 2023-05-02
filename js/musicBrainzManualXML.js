@@ -1,5 +1,6 @@
 // See MusicBrainz API https://musicbrainz.org/doc/MusicBrainz_API
 
+
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('musicButton').addEventListener('click', searchMusicManual)
   document.getElementById('musicForm').addEventListener('submit', searchMusicManual)

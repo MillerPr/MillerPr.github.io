@@ -1,4 +1,1 @@
-$(function () {
-      $("#nav-placeholder").load("nav.html");
-    });
-    $("div#title").last().addClass("h1");
+$(function () {$("#nav-placeholder").load("nav_final.html");});

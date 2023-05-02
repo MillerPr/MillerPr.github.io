@@ -30,14 +30,6 @@ nav {
   background-color: #800000;
 }
 
-.h1 {
-  @extend %title;
-  letter-spacing: 2px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 img {
   max-width: 350px;
 }

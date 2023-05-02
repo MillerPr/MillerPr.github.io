@@ -35,7 +35,7 @@ function lastItem() {
     inputArray.push(newInput);
   });
   document.getElementById('outputArray').innerText = `You entered ${inputArray.join(', ')}.
-      I sorted them ${inputArray.sort().join(', ')}`;
+  I sorted them ${inputArray.sort().join(', ')}`;
 }; */
 
 // This version asks the user for how many items to input, and what category they are.
@@ -47,16 +47,16 @@ function sortItemsInput() {
     alert('Please enter a valid number 1-4.');
     sortItemsInput();
   } else {
-   for (let index = 0; index < numItems; index++) {
-    var catInput = prompt(`Which ${numItems} categories would you like to enter?`)
-     inputCat.push(catInput);
-   }
-   inputCat.forEach((item) => {
-     var newInput = prompt(`enter one ${item}`);
-     inputArray.push(newInput);
-   });
-   document.getElementById('outputArray').innerText = `You entered ${inputArray.join(', ')}.
-   I sorted them ${inputArray.sort().join(', ')}`;
+    for (let index = 0; index < numItems; index++) {
+      var catInput = prompt(`Which ${numItems} categories would you like to enter?`)
+      inputCat.push(catInput);
+    }
+    inputCat.forEach((item) => {
+      var newInput = prompt(`enter one ${item}`);
+      inputArray.push(newInput);
+    });
+    document.getElementById('outputArray').innerText = `You entered ${inputArray.join(', ')}.
+    I sorted them ${inputArray.sort().join(', ')}`;
   }
 };
 
@@ -111,6 +111,7 @@ function evalNumber(){
   };
 };
 
+
 // Ternary operator to check truthiness for evaluating a number looks like sentence grammar.
 // Is STATEMENT true ? truthy action : falsy action
 // truthy action can be just about anything
@@ -122,12 +123,11 @@ function evalNumber(){
 var beverage = (age >= 21) ? "Wine" : "Grape Juice";
 console.log(beverage); // "Wine" */
 function evalNumberTernary() {
-  var inputValue = parseInt(prompt("Enter any five-digit integer without commas"));;
-  isNaN(inputValue) || inputValue > 99999 || inputValue < 10000 || !(Number.isInteger(inputValue)) ?
+  var inputValue = prompt("Enter any five-digit integer without commas");
+  var checkValue = Number(inputValue);
+  isNaN(checkValue) || checkValue > 99999 || checkValue < 10000 || !(Number.isInteger(checkValue)) ?
   alert(inputValue + " is not a valid 5-digit number.") :
-  inputValue % 2 == 0 ?
-  alert(`${inputValue} is an even number.`) :
-  alert(`${inputValue} is an odd number.`)
+  checkValue % 2 == 0 ? alert(`${checkValue} is an even number.`) : alert(`${checkValue} is an odd number.`);
 };
 
 // User ternary to construct a function with parameters and capture nulls.
@@ -201,7 +201,7 @@ window.onload = function (){
 
   var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
   'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWlsbGVyY3AiLCJhIjoiY2xnODB1b2JmMHNjZjNocXI1cGc0ZTU2eCJ9.XJRQXHZC13umd2xBQ98hBQ';
+  mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWlsbGVyY3AiLCJhIjoiY2xnODB1b2JmMHNjZjNocXI1cGc0ZTU2eCJ9.XJRQXHZC13umd2xBQ98hBQ';
 
   var grayscale   = L.tileLayer(mbUrl, {id: 'mapbox/light-v9', tileSize: 512, zoomOffset: -1, attribution: mbAttr});
   var streets  = L.tileLayer(mbUrl, {id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, attribution: mbAttr});
@@ -287,7 +287,7 @@ function searchMusic(){
   }
   //var newArray = ["papaya", "apple", "orange", "banana"];
 
-  //Digital chalkboard for Feb 16.
+  //Digital chalkboard
   var userArray = []
   function sortArray(){
     var userInput = document.getElementById('inputTerm').value;
@@ -335,6 +335,9 @@ function searchMusic(){
     const btn4 = document.querySelector('#button_04');
     btn4.addEventListener('click', conditional);
 
+    const btn5b = document.querySelector('#button_05b');
+    btn5b.addEventListener('click', evalNumber);
+
     const btn5 = document.querySelector('#button_05');
     btn5.addEventListener('click', evalNumberTernary);
 
@@ -357,13 +360,12 @@ function searchMusic(){
   })
 
 
-function jose(){
-  var array = [];
-  var number = prompt("enter a number")
-  array.push(number)
-  array.sort
-  for (i=0; i < array.length; i++){
-    console.log(array[i]);
+  function jose(){
+    var array = [];
+    var number = prompt("enter a number")
+    array.push(number)
+    array.sort
+    for (i=0; i < array.length; i++){
+      console.log(array[i]);
+    }
   }
-
-}
