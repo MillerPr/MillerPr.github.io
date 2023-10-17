@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" 
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
     xmlns:ino="http://namespaces.softwareag.com/tamino/response2"
     xmlns:xql="http://metalab.unc.edu/xql"
     xmlns:xq="http://namespaces.softwareag.com/tamino/XQuery/result"
@@ -8,7 +8,7 @@
 
     <!-- Strip extra white space everywhere. -->
     <xsl:strip-space elements="*"/>
-    
+
     <xsl:template match="/">
         <html>
             <head>
@@ -21,7 +21,7 @@
                 <param id="lat" value="{$lat}"/>
                 <param id="lng" value="{$lng}"/>
                 <param id="itemName" value="{$itemName}"/>
-                
+
                 <!--If the set is published from spec, then use this JS for table filtering.-->
                 <xsl:if test="/ino:response/xq:result/ochre/set[@type = 'publishedFromSpec']">
                     <script src="http://ochre.lib.uchicago.edu/ochre/ochreSet.js"/>
@@ -46,7 +46,7 @@
         });
       }
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-ZJuryRRmMubzIUAd1QlGo9b-PDj-TR4&callback=initMap" type="text/javascript">
+<script async defer src="">
 </script>
 ]]>
 </xsl:text>
@@ -63,7 +63,7 @@
                 <div class="container-fluid">
                     <xsl:apply-templates/>
                 </div>
-                
+
                 <!--PUBLICATION DATE AND LICENSE FOOTER-->
                 <div class="footer" id="footer">
                     <hr/>
@@ -101,9 +101,9 @@
             </body>
         </html>
     </xsl:template>
-    
+
     <xsl:template match="text()"> </xsl:template>
-    
+
     <xsl:template match="spatialUnit">
         <div class="container-fluid">
             <div class="row h4">
@@ -135,7 +135,7 @@
                     </xsl:for-each>
                 </div>
             </xsl:for-each>
-            
+
             <xsl:for-each select="//spatialUnit[@n = '0']">
                 <xsl:if test="identification">
                     <div class="row py-1 mt-4">
@@ -169,18 +169,18 @@
                         </div>
                     </xsl:otherwise>
                 </xsl:choose>
-                
+
                 <div class="row">
                     <xsl:apply-templates select="reverseLinks"/>
                 </div>
-                
+
                 <xsl:apply-templates select="context"/>
-                
+
             </xsl:for-each>
-            
+
         </div>
     </xsl:template>
-    
+
     <xsl:template match="resource">
         <div class="container-fluid">
             <div class="row">
@@ -201,7 +201,7 @@
                     <xsl:value-of select="description"/>
                 </h2>
             </div>
-            
+
             <div class="row">
                 <xsl:if test="//@publicationDateTime">
                     <xsl:variable name="uuid" select="@uuid"/>
@@ -256,11 +256,11 @@
             <xsl:apply-templates select="reverseLinks"/>
         </div>
     </xsl:template>
-    
+
     <xsl:template match="identification">
         <xsl:value-of select="label/text()"/>
     </xsl:template>
-    
+
     <xsl:template match="alias">
         <xsl:for-each select=".">
             <xsl:value-of select="."/>
@@ -269,7 +269,7 @@
             <xsl:text>, </xsl:text>
         </xsl:if>
     </xsl:template>
-    
+
     <xsl:template match="observations">
         <xsl:for-each select="observation">
             <div>
@@ -304,7 +304,7 @@
             </div>
         </xsl:for-each>
     </xsl:template>
-    
+
     <xsl:template match="coordinates">
         <div id="map"/>
         <h5>Coordinates</h5>
@@ -316,7 +316,7 @@
         </p>
         <br/>
     </xsl:template>
-    
+
     <xsl:template match="reverseLinks">
         <xsl:if test="*/@uuid">
             <h5>Linked items</h5>
@@ -326,13 +326,13 @@
 				<xsl:value-of select="name(.)"/>
 				<xsl:text>: </xsl:text>-->
                 <a id="noPaddingLink" href="http://pi.lib.uchicago.edu/1001/org/ochre/{@uuid}">
-                    <xsl:value-of select="text()"/> 
+                    <xsl:value-of select="text()"/>
                 </a> (<xsl:value-of select="name(.)"/>)
                 <br/>
             </xsl:for-each>
         </xsl:if>
     </xsl:template>
-    
+
     <xsl:template match="context">
         <xsl:if test="../spatialUnit">
             <div class="row">
@@ -380,7 +380,7 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    
+
     <xsl:template match="property">
         <ul>
             <li>
@@ -400,7 +400,7 @@
                         </a>
                     </xsl:when>
                     <xsl:otherwise>
-                        
+
                         <xsl:if test="value/@type = 'link'">
                             <a href="http://pi.lib.uchicago.edu/1001/org/ochre/{value/@uuid}">
                                 <xsl:value-of select="value"/>
@@ -425,7 +425,7 @@
             </li>
         </ul>
     </xsl:template>
-    
+
     <xsl:template match="notes">
         <xsl:if test="note">
             <xsl:for-each select="note">
@@ -445,7 +445,7 @@
                             select="parent::notes/parent::section/identification/label/text()"/>
                     </p>
                 </xsl:if>
-                
+
                 <xsl:call-template name="LFsToBRs">
                     <xsl:with-param name="input" select="./text()"/>
                 </xsl:call-template>
@@ -453,7 +453,7 @@
             <br/>
         </xsl:if>
     </xsl:template>
-    
+
     <xsl:template match="periods">
         <xsl:if test="period/text()">
             <h5>Attested periods</h5>
@@ -464,7 +464,7 @@
             </xsl:for-each>
         </xsl:if>
     </xsl:template>
-    
+
     <xsl:template match="links">
         <xsl:if test="resource">
             <h5>Resources<xsl:text> (</xsl:text><xsl:value-of select="count(resource)"
@@ -497,7 +497,7 @@
             </p>
         </xsl:if>
     </xsl:template>
-    
+
     <!-- SPATIAL UNIT SUB-ITEMS LINKS LIST -->
     <!-- This template creates a links list of sub-items. -->
     <xsl:template name="sUnitLinks">
@@ -519,7 +519,7 @@
             </xsl:if>
         </p>
     </xsl:template>
-    
+
     <!--THE FOLLOWING TEMPLATE CONVERTS LF STYLE LINE BREAKS TO HTML BR STYLE LINE BREAKS-->
     <!--CALL IT WHERE NECESSARY; CF. THE NOTES TEMPLATE ABOVE.-->
     <xsl:template name="LFsToBRs">
