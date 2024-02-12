@@ -8,7 +8,7 @@ var parentElement = document.getElementById('ochreTableBody');
 var url = "https://ochre.lib.uchicago.edu/ochre?uuid=accd571b-bae3-4d42-93d9-58b65ec79300";
 
 
-//First function, called on <body>
+//First function, called on <body> or invoked with event listener
 //Everything else happens in the scope of this function
 function loadXML(){
   //Chain the next funtion to create the XHR
@@ -34,6 +34,7 @@ function XMLrequest(link){
   console.log('XMLrequest -- OK');
 
 }
+
 
 function createHeaders(sourceXML){
   document.getElementById('projectTitle').innerText = sourceXML.getElementsByTagName('metadata')[0].children[1].innerHTML;

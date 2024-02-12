@@ -1,9 +1,8 @@
-$(document).ready(loadXML);
 var parentElement = $('#ochreTableBody');
 
 $.ajax({
   method: "GET",
-  url: "https://ochre.lib.uchicago.edu/ochre?uuid=accd571b-bae3-4d42-93d9-58b65ec79300",
+  url: "https://pi.lib.uchicago.edu/1001/org/ochre/73cb4c93-5c1c-49b1-b62e-885b39e57e3c",
   data: "xml",
   statusCode: {
     404: function(){
@@ -11,57 +10,20 @@ $.ajax({
     },
     200: function(){
       console.log('XML Load -- OK');
-    }
-  }
-  .done(function(responseXML){
+    },
+  },
+  success: function(responseXML){
     createHeaders(responseXML);
     listTexts(responseXML);
-  })
+  }
 });
 
-/* document.addEventListener('DOMContentLoaded', () => {
-  window.addEventListener('load', loadXML);
-}) */
-
-
-//Define parent element
-//Define API url
-var url = "https://ochre.lib.uchicago.edu/ochre?uuid=accd571b-bae3-4d42-93d9-58b65ec79300";
-
-//First function, called on <body>
-//Everything else happens in the scope of this function
-function loadXML(){
-  //Chain the next funtion to create the XHR
-  XMLrequest(url);
-  console.log('loadXML -- OK');
-};
-
-function XMLrequest(link){
-  //Create XHR object
-  //Open the API call
-  //Send the API call
-  var connect = new XMLHttpRequest();
-  connect.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      //If all is well with the API call, then format the response
-      //with the next chained function.
-      createHeaders(this.responseXML);
-      listTexts(this.responseXML);
-    }
-  };
-  connect.open("GET", link, true);
-  connect.send();
-  console.log('XMLrequest -- OK');
-
-}
-
 function createHeaders(sourceXML){
-  document.getElementById('projectTitle').innerText = sourceXML.getElementsByTagName('metadata')[0].children[1].innerHTML;
-  document.getElementById('setTitle').innerText = sourceXML.getElementsByTagName('set')[0].children[3].children[0].innerHTML;
-  document.getElementById('setDescription').innerText = sourceXML.getElementsByTagName('set')[0].children[4].innerHTML;
-  var licenseText = document.getElementById('license');
-  licenseText.innerText = sourceXML.getElementsByTagName('availability')[0].children[0].innerHTML;
-  licenseText.setAttribute('href', sourceXML.getElementsByTagName('availability')[0].children[0].attributes[0].nodeValue);
+  $('#projectTitle').text(sourceXML.getElementsByTagName('metadata')[0].children[1].innerHTML);
+  $('#setTitle').text(sourceXML.getElementsByTagName('set')[0].children[3].children[0].innerHTML);
+  $('#setDescription').text(sourceXML.getElementsByTagName('set')[0].children[4].innerHTML);
+  $('#license').text(sourceXML.getElementsByTagName('availability')[0].children[0].innerHTML);
+  $('#license').attr('href', sourceXML.getElementsByTagName('availability')[0].children[0].attributes[0].nodeValue);
 }
 
 function listTexts(sourceXML){

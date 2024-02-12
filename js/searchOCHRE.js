@@ -182,3 +182,7 @@ function listResults_04(xmlResults){
     document.getElementById('itemLink_' + i).appendChild(listItem);
   }
 };
+
+//project 91bc7973-1d47-4da7-b971-a99289f69793
+//resource 87343afd-c9e3-4474-be9c-174c848ab978
+var url = "https://ochre.lib.uchicago.edu/ochre?&xquery=for%20$q%20in%20input()/ochre[@uuidBelongsTo=%2791bc7973-1d47-4da7-b971-a99289f69793%27]/resources where $q[@uuid='87343afd-c9e3-4474-be9c-174c848ab978'] return <results><item>{$q/@uuid}%20{$q/identification/label}%20{$q/description}</item></results>";
