@@ -11,3 +11,5 @@ css/demo.css
 scss/*
 scss/_UCIdentity.scss
 scss/millerpr.scss
+.DS_Store
+views/
