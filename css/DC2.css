@@ -1,0 +1,30 @@
+h1 {
+  color: #800000;
+}
+
+h1::first-letter {
+  color: seagreen;
+  font-size: larger;
+}
+
+p {
+  color: blue;
+}
+
+p#firstPara:hover {
+  font-weight: lighter;
+}
+
+p#firstPara {
+  font-weight: bolder;
+  color: red;
+}
+
+div p {
+  color: green;
+}
+
+charm {
+  color: yellow;
+  greeting: hello;
+}

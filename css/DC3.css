@@ -1,0 +1,48 @@
+table {
+
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "wdth" 100, "YTLC" 500;
+
+}
+
+ol.a {
+  list-style-type: lower-roman;
+}
+
+ol.b {
+  list-style-type: lower-latin;
+}
+
+ul.c {
+  list-style-type: square;
+}
+
+ul.d {
+  list-style-type: '$ ';
+}
+
+ol#firstList>li::first-letter {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+.bodylink > a:link {
+  color:deeppink;
+}
+
+.bodylink > a:visited {
+  color: darkmagenta;
+}
+
+.bodylink > a:hover {
+  color: blue;
+}
+
+

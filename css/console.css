@@ -1,0 +1,32 @@
+body {
+  color:rgba(9, 255, 0, 0.5);
+  /* In base ten, 5bf734 is 6,027,060*/
+  font-family: 'VT323', monospace;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 32px;
+  background-color: hsl(125, 18%, 26%);
+}
+
+a:link {
+  color: rgb(0, 255, 64);
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: rgb(208, 255, 0);
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+  text-decoration: underline;
+  cursor:help;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
