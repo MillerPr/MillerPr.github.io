@@ -8,4 +8,6 @@ prePubDC/
 prePubXML/
 Demos/
 css/demo.css
-scss/
+scss/*
+scss/_UCIdentity.scss
+scss/millerpr.scss
