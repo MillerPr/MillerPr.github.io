@@ -1,10 +1,12 @@
 // Version using fetch(), a different method to build the URL, and toSorted() with array.
+// Version with functions moved out of the wikiAPI() function.
+// And uses Array.forEach().
+
+var parentDiv = document.getElementById('wiki');
+removeResults(parentDiv);
+var searchTerm = document.getElementById('searchTerm').value;
 
 function wikiAPI() {
-  var parentDiv = document.getElementById('wiki');
-  removeResults(parentDiv);
-  var searchTerm = document.getElementById('searchTerm').value;
-
   var url = "https://en.wikipedia.org/w/api.php";
   const params = {
     action: "query",
@@ -23,11 +25,11 @@ function wikiAPI() {
         console.log('PROBLEM! Status code is: ' + response.status);
         return;
       };
-      console.log(response)
       response.json().then(data => wikiResults(data));
     });
+  };
 
-    function wikiResults(wikiObject) {
+  function wikiResults(wikiObject) {
       var resultArray = []
 
       for (const pageID in wikiObject.query.pages) {
@@ -40,16 +42,21 @@ function wikiAPI() {
       const sortedArray = resultArray.toSorted((a, b) => a[0] - b[0]); // new method in 2023!
       console.log(sortedArray)
 
-      for (const i in sortedArray) {
+      sortedArray.forEach(makeLinks);
+
+      function makeLinks(value, index, array) {
         var pageURL = "https://en.wikipedia.org/?curid="
         var newAnchor = document.createElement("a");
-        newAnchor.href = pageURL+sortedArray[i][1];
+        newAnchor.href = pageURL+value[1];
         newAnchor.className = 'd-block';
-        newAnchor.innerText = sortedArray[i][2];
+        newAnchor.innerText = value[2];
         console.log(newAnchor);
         document.getElementById("wiki").appendChild(newAnchor);
-      };
+
+      }
     }
+
+
 
     //This function will remove the previous results.
     function removeResults(parentDiv){
@@ -57,4 +64,3 @@ function wikiAPI() {
         parentDiv.removeChild(parentDiv.firstChild);
       }
     }
-  };
