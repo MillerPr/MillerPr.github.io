@@ -28,3 +28,7 @@ charm {
   color: yellow;
   greeting: hello;
 }
+
+nav {
+  background-color: #800000;
+}
