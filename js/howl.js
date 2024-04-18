@@ -1,11 +1,13 @@
 // The HTML is configured intentionally with h2.animalTitle containing audio file names like "Cow".
+         // <h2 class="animalTitle">Cow</h2>
+         // <img id="animal01" src="media/cow.jpg" class="img-thumbnail howlerImage" alt="Cow"></img>
 // Use .getElementsByClassName() to get an HTMLCollection of all .animalTitle elements.
-// Create a new Object with properties and values like 'animal01: "Cow" '.
+// Create a new Object with properties and values like {animal01: "Cow"}.
   // These values can be found in the HTMLCollection.
-// Use the Object to create event listeners for <img> elements that launch the howler script.
+// Use the Object {animal01: "Cow"} to create event listeners for <img> elements that launch the howler script.
   // Write a single 'for...in' statement to add listeners to all the <img> elements.
   // .addEventListener('click', () => {CODE GOES HERE}
-  // The animal title determines which sprite is played.
+  // The animal title determines which audio is played.
 // Leverage the Object to add mouseover styling to the <img> elements.
   // On mouseover add this.style.border = '3px solid red';
   // On mouseout add this.style.border = '0px';
