@@ -38,17 +38,19 @@ function wikiAPI() {
       console.log(resultArray);
 
       const sortedArray = resultArray.toSorted((a, b) => a[0] - b[0]); // new method in 2023!
-      console.log(sortedArray)
+      //console.log(sortedArray)
 
-      for (const i in sortedArray) {
+      sortedArray.forEach(makeLinks);
+
+      function makeLinks(value) {
         var pageURL = "https://en.wikipedia.org/?curid="
         var newAnchor = document.createElement("a");
-        newAnchor.href = pageURL+sortedArray[i][1];
+        newAnchor.href = pageURL+value[1];
         newAnchor.className = 'd-block';
-        newAnchor.innerText = sortedArray[i][2];
+        newAnchor.innerText = value[2];
         console.log(newAnchor);
         document.getElementById("wiki").appendChild(newAnchor);
-      };
+      }
     }
 
     //This function will remove the previous results.
