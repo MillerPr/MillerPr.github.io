@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<result>
+  <ochre belongsTo="PWJ" publicationDateTime="2021-09-13T20:38:50" uuid="50f7b9a5-329a-49ab-85e2-f8fb4ee6e867" uuidBelongsTo="4724cad8-1b09-4373-aca7-51a4dc5e2255">
+    <metadata>
+      <dataset xmlns:dc="http://purl.org/dc/elements/1.1/">OCHRE/PWJ</dataset>
+      <description xmlns:dc="http://purl.org/dc/elements/1.1/">Tiwanaku and Its Hinterland</description>
+      <publisher xmlns:dc="http://purl.org/dc/elements/1.1/">OCHRE</publisher>
+      <identifier xmlns:dc="http://purl.org/dc/elements/1.1/">https://pi.lib.uchicago.edu/1001/org/ochre/4724cad8-1b09-4373-aca7-51a4dc5e2255</identifier>
+    </metadata>
+    <resource format="image/jpeg" n="0" type="image" uuid="50f7b9a5-329a-49ab-85e2-f8fb4ee6e867">
+      <availability>
+        <license>No license information provided</license>
+      </availability>
+      <project isPrivate="true" publicationDateTime="2020-02-27T22:33:25">
+        <identification>
+          <label>Tiwanaku and Its Hinterland</label>
+          <alias language="spa">Proyecto Wila Jawira</alias>
+          <abbreviation>PWJ</abbreviation>
+          <website>https://ochre.lib.uchicago.edu/PWJ</website>
+        </identification>
+      </project>
+      <context displayPath="Projects/Tiwanaku and Its Hinterland/1986 Color Photographs/Color roll 6">
+        <context displayPath="Projects/Tiwanaku and Its Hinterland/1986 Color Photographs/Color roll 6">
+          <project n="-3" uuid="4724cad8-1b09-4373-aca7-51a4dc5e2255">Tiwanaku and Its Hinterland</project>
+          <tree n="-2" uuid="788acfb5-65e9-4e83-a0ca-f6c68dc42081">1986 Color Photographs</tree>
+          <heading>Color roll 6</heading>
+        </context>
+      </context>
+      <identification>
+        <label>Luk N3635-E2882-5-2880-5</label>
+      </identification>
+      <description>1986 6-23 N3635-E2882-5-2880-5</description>
+      <properties>
+        <property>
+          <label uuid="e51654c0-ef4b-9f5f-7325-e25fde2a3446">Resource type</label>
+          <value type="xs:string" uuid="e41a5764-dbfe-0cdb-8418-aba662b5adfc">Photograph</value>
+        </property>
+      </properties>
+    </resource>
+  </ochre>
+</result>

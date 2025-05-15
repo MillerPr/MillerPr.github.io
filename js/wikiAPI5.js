@@ -28,9 +28,11 @@ function wikiAPI() {
     });
 
     function wikiResults(wikiObject) {
+      console.log(wikiObject.query.pages);
       var resultArray = []
 
       for (const pageID in wikiObject.query.pages) {
+
         resultArray.push([wikiObject.query.pages[pageID].index, wikiObject.query.pages[pageID].pageid, wikiObject.query.pages[pageID].title])
       } // push only the object values we want to array to sort below.
 

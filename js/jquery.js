@@ -1,22 +1,25 @@
-$(function () { //shorthand for $(document).ready(function())
-  console.log("ready!");
+//shorthand for $(document).ready(function())
+$(function () { console.log("ready!");
 
-  //Ask the students to do the code marked with ***
   // Remove all the lines with *** before sharing.
 
-  //GETTERS AND SETTERS
+  //GETTERS AND SETTERS, run in console
+  //JS: document.getElementById('getText')
   //$('#getText').text()
-  $('#getText').text('New Button Name')
-  //$('button').attr()
-  //$('button').attr('hidden', true)
+  //$('#getText').text('New Button Name')
+
+  //ATTRIBUTES
+  //$('#getText').attr('class')
+  //$('#getText').attr('hidden', true)
   //$('#pageTitle').text('jQuery Fun')
 
-  //MAP SOME TEXT TO AN ARRAY
+  //MAP SOME TEXT TO AN OBJECT/ARRAY
+  //Chaining multiple functions
   // $('.lead')
   // $('.lead').map(function(){return $(this).text();})
   // $('.lead').map(function(){return $(this).text();}).get();
 
-  //A BRIEF DIGRESSION ON THIS
+  // GET TEXT OR GET TAG NAME
   // $('.lead').map(function(){return $(this).text();}).get()
   // $('.lead').map(function(){return this.tagName;}).get()
 
@@ -29,7 +32,7 @@ $(function () { //shorthand for $(document).ready(function())
 
   //  TOGGLE BUTTON
   // Use .on('click') on the toggleParagraph button
-  //***  In the function, use .toggle() on the leadParagraph
+  // In the function, use .toggle() on the leadParagraph
     $('#toggleParagraph').on('click', function () {
     $('#leadParagraph').toggle()
     console.log("$('#leadParagraph').toggle()")
@@ -69,10 +72,10 @@ $(function () { //shorthand for $(document).ready(function())
     }
   });
 
-  // FILTER() -- remove comment below to activate.
+  // FILTER()
   // $('li').filter(':nth-child(2n)').css("background-color", "red");
   // $('li').filter(function(index){return (index+1)%2 === 0}).css("background-color", "red");
-  //*** $('li').filter('.even').css("background-color", "red");
+  // $('li').filter('.even').css("background-color", "red");
 
   // Add css based on element content
   // $('li:contains(thing)').css("background-color", "red");
@@ -82,7 +85,7 @@ $(function () { //shorthand for $(document).ready(function())
   // $('#hideParagraph').parentsUntil('body')
   // $('#hideParagraph').closest("div")
   // $('#hideParagraph').next()
-  //*** $('#hideParagraph').closest('div').css('background-color', 'red')
+  // $('#hideParagraph').closest('div').css('background-color', 'red')
 
   //WORKING WITH THE DOM
   // Selecting siblings and self
@@ -113,7 +116,7 @@ $(function () { //shorthand for $(document).ready(function())
   // $("li").attr('xml:lang', 'en');
   // $("li").removeAttr('xml:lang', 'en');
   // $("li").removeClass("newClass");
-  //***  $( "li" ).removeClass( "newClass" ).addClass("newerClass");
+  // $( "li" ).removeClass( "newClass" ).addClass("newerClass");
 
   //Tasks:
   // $('ol li').addClass('special');

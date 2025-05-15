@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+  <ochre belongsTo="RSTI" languages="eng;fre;ger;spa" publicationDateTime="2024-03-12T16:16:14" uuid="6f18e3a7-a396-46d9-85cb-92674c24cfc0" uuidBelongsTo="46ccab46-9c3f-4448-8476-2bf18236791e">
+    <metadata>
+      <dataset xmlns:dc="http://purl.org/dc/elements/1.1/">OCHRE/RSTI</dataset>
+      <description xmlns:dc="http://purl.org/dc/elements/1.1/">Ras Shamra Tablet Inventory</description>
+      <publisher xmlns:dc="http://purl.org/dc/elements/1.1/">OCHRE</publisher>
+      <identifier xmlns:dc="http://purl.org/dc/elements/1.1/">https://pi.lib.uchicago.edu/1001/org/ochre/6f18e3a7-a396-46d9-85cb-92674c24cfc0</identifier>
+      <language xmlns:dc="http://purl.org/dc/elements/1.1/" default="true">eng</language>
+      <language xmlns:dc="http://purl.org/dc/elements/1.1/">fre</language>
+      <language xmlns:dc="http://purl.org/dc/elements/1.1/">ger</language>
+      <language xmlns:dc="http://purl.org/dc/elements/1.1/">spa</language>
+    </metadata>
+    <spatialUnit n="0" publicationDateTime="2024-03-12T16:16:14" uuid="6f18e3a7-a396-46d9-85cb-92674c24cfc0">
+      <availability>
+        <license>All inscribed object information derived from Bordreuil and Pardee (1989) La Trouvaille Épigraphique de l’Ougarit 1: Concordance. Ras Shamra-Ougarit 5, Éditions Recherche sur les Civilisations: Paris, with additions and corrections. Text editions are attributed to the editors. Photos are copyright of PhoTEO, MRS except those photos submitted to RSTI from John Ellison, which are shared under CC BY-NC-SA 4.0.</license>
+      </availability>
+      <project>
+        <identification>
+          <label>
+            <content xml:lang="eng" languages="eng">
+              <string>Ras Shamra Tablet Inventory</string>
+            </content>
+          </label>
+          <abbreviation>
+            <content xml:lang="eng" languages="eng">
+              <string>RSTI</string>
+            </content>
+          </abbreviation>
+          <website>https://onlinepublications.uchicago.edu/RSTI/</website>
+        </identification>
+      </project>
+      <context displayPath="Projects/Ras Shamra Tablet Inventory/Ugarit/Ugarit/Royal Palace/The Eastern Archives/Room 53">
+        <context displayPath="Projects/Ras Shamra Tablet Inventory/Ugarit/Ugarit/Royal Palace/The Eastern Archives/Room 53">
+          <project n="-6" publicationDateTime="2020-03-02T16:47:05" uuid="46ccab46-9c3f-4448-8476-2bf18236791e">Ras Shamra Tablet Inventory</project>
+          <tree n="-5" publicationDateTime="2021-06-10T18:11:04" uuid="c16d7655-2bab-4f2e-8035-48009daf8dae">Ugarit</tree>
+          <spatialUnit info="51580c80-71aa-4e12-bfaa-084c3ea374d2" n="-4" publicationDateTime="2021-06-11T12:37:10" uuid="e5e9d6aa-1e63-461a-a8b3-0ee3ac1b2418">Ugarit</spatialUnit>
+          <spatialUnit n="-3" publicationDateTime="2021-06-10T17:46:01" uuid="16474db1-bfe9-4ecc-8cbb-b717bc4138be">Royal Palace</spatialUnit>
+          <spatialUnit n="-2" publicationDateTime="2021-06-10T17:46:12" uuid="76fb6f54-7e61-46ff-9287-545738f9c8a2">The Eastern Archives</spatialUnit>
+          <spatialUnit n="-1" publicationDateTime="2021-06-10T17:51:15" uuid="3c933e4f-41bb-4623-8dc2-034cff76a097">Room 53</spatialUnit>
+        </context>
+      </context>
+      <identification>
+        <label>
+          <content xml:lang="eng" languages="eng">
+            <string>RS 15.001</string>
+          </content>
+        </label>
+      </identification>
+      <description>
+        <content xml:lang="eng" languages="eng">
+          <string>Tablet, Alphabetic Ugaritic</string>
+        </content>
+      </description>
+      <events>
+        <event>
+          <label>
+            <content xml:lang="eng" languages="eng">
+              <string>Negative produced</string>
+            </content>
+          </label>
+        </event>
+        <event>
+          <label>
+            <content xml:lang="eng" languages="eng">
+              <string>Handcopy done</string>
+            </content>
+          </label>
+        </event>
+        <event>
+          <label>
+            <content xml:lang="eng" languages="eng">
+              <string>Photographic print scanned</string>
+            </content>
+          </label>
+        </event>
+      </events>
+      <observations>
+        <observation observationNo="1">
+          <properties>
+            <property>
+              <label uuid="8ab9caea-aa80-4bae-a359-d1b03eddddf4">
+                <content xml:lang="eng" languages="eng">
+                  <string>Full TEO Findspot</string>
+                </content>
+              </label>
+              <value type="xs:string">Palais Royal, pièce 53 (Archives Est), p.t. 72, 73, à 0,70</value>
+            </property>
+            <property>
+              <label uuid="1593a756-6733-4de8-a056-e4b546be202e">
+                <content xml:lang="eng" languages="eng">
+                  <string>Museum Number</string>
+                </content>
+              </label>
+              <value type="xs:string">DO 3894</value>
+            </property>
+            <property>
+              <label uuid="a1ca7074-145d-4e33-8491-824c13268ee3">
+                <content xml:lang="eng" languages="eng">
+                  <string>Publication</string>
+                </content>
+              </label>
+              <value type="xs:string">PRU 2: 140</value>
+            </property>
+            <property>
+              <label uuid="d5ed8450-e5dd-4131-a563-847a0c4ba808">
+                <content xml:lang="eng" languages="eng">
+                  <string>KTU reference</string>
+                </content>
+              </label>
+              <value type="xs:string">KTU 4.129</value>
+            </property>
+            <property>
+              <label uuid="3aa299da-bf90-477f-bad0-15b83cf8a61b">
+                <content xml:lang="eng" languages="eng">
+                  <string>Size</string>
+                </content>
+              </label>
+              <value type="xs:string">98 x 72 x 32</value>
+            </property>
+            <property>
+              <label uuid="e51609b9-99f2-df8f-a579-bc30d68687d6">
+                <content xml:lang="eng" languages="eng">
+                  <string>Classification</string>
+                </content>
+              </label>
+              <value type="xs:string" uuid="8e5faccd-67f3-5172-2386-1200f7153bc1">
+                <content xml:lang="eng" languages="eng">
+                  <string>Registered item</string>
+                </content>
+              </value>
+              <property>
+                <label uuid="7ed72a30-14a2-df6f-a2c9-76295cdb4bdb">
+                  <content xml:lang="eng" languages="eng">
+                    <string>Object type</string>
+                  </content>
+                </label>
+                <value type="xs:string" uuid="20a05d15-12e1-44cd-542f-c1f6188fa026">
+                  <content xml:lang="eng" languages="eng">
+                    <string>Tablet</string>
+                  </content>
+                </value>
+              </property>
+              <property>
+                <label uuid="b572a357-3007-41e7-9ec1-1f3e4cda5edf">
+                  <content xml:lang="eng" languages="eng">
+                    <string>Length</string>
+                  </content>
+                </label>
+                <value type="xs:decimal" unit="mm">98</value>
+              </property>
+              <property>
+                <label uuid="a5983c8f-06c1-4d20-9e05-fdde87ad607f">
+                  <content xml:lang="eng" languages="eng">
+                    <string>Width</string>
+                  </content>
+                </label>
+                <value type="xs:decimal" unit="mm">72</value>
+              </property>
+              <property>
+                <label uuid="5160324a-d1cb-4c3a-aa29-9bdd19c00927">
+                  <content xml:lang="eng" languages="eng">
+                    <string>Thickness</string>
+                  </content>
+                </label>
+                <value type="xs:decimal" unit="mm">32</value>
+              </property>
+              <property>
+                <label uuid="0f6da537-f61a-48e7-9a0a-3ed3be2ae4ce">
+                  <content xml:lang="eng" languages="eng">
+                    <string>Excavation season</string>
+                  </content>
+                </label>
+                <value type="xs:string" uuid="e99d5bc9-ee53-4557-a30c-994cdd8e057d">
+                  <content xml:lang="eng" languages="eng">
+                    <string>0015</string>
+                  </content>
+                </value>
+              </property>
+            </property>
+            <property>
+              <label uuid="1db231a7-a055-d5c6-08a8-b06022c8daec">
+                <content xml:lang="eng" languages="eng">
+                  <string>Associated text</string>
+                </content>
+              </label>
+              <value publicationDateTime="2024-03-12T16:14:30" type="xs:IDREF" uuid="69d7c01d-7a04-4844-8d2e-10e2ce12cdb1">RS 15.001</value>
+            </property>
+            <property>
+              <label uuid="6c3b5b96-d294-4e8d-afd6-b775bfd62d0d">
+                <content xml:lang="eng" languages="eng">
+                  <string>Topographic point</string>
+                </content>
+              </label>
+              <value publicationDateTime="2023-09-12T20:33:27" type="xs:IDREF" uuid="2e3a951d-f7dc-4610-9042-6c205c09c4e5">0072-0073</value>
+            </property>
+          </properties>
+          <notes>
+            <note noteNo="0">
+              <content xml:lang="eng" languages="eng">
+                <string>Photo PRU 2, pl. XXI.</string>
+              </content>
+            </note>
+          </notes>
+        </observation>
+      </observations>
+    </spatialUnit>
+  </ochre>
+</result>
